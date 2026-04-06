@@ -18,6 +18,7 @@ export interface ProjectItem {
   githubUrl: string;
   demoUrl: string;
   status?: string;
+  imageUrl?: string;
 }
 
 export interface ExperienceItem {

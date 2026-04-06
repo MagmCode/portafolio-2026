@@ -8,7 +8,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- No changes yet.
+- Implementación de animaciones modernas al hacer *scroll* mediante la creación de la directiva especializada `scroll-animate.directive.ts`.
+- Instalación de la librería `@ng-icons/core` y `@ng-icons/heroicons` (`package.json` y `package-lock.json`) para la gestión avanzada de íconos vectoriales.
+- Despliegue de íconos SVG dinámicos mediante inyección de `<ng-icon>` en el `NavbarComponent`.
+
+### Changed
+- **UX/UI Portfolio Professional Revamp:** (Afectando: `hero`, `about`, `stack`, `projects`, `experience`, `contact`, `navbar`, `footer`):
+  - **Identidad Visual**: Refactorización masiva de la paleta de colores en `tailwind.config.js`. Migración completa del prefijo de colores `brand-*` hacia una estructura escalable y altamente contrastante (`primary`, `secondary`, `neutral`, `shadow`, `warn`, `danger`, `accent`).
+  - **Jerarquía y Experiencia**: Mejoras de storytelling y jerarquía visual en la línea de tiempo de `experience.html` y `experience.ts`.
+  - **Proyectos**: Optimización del manejo de enlaces, estilización de tarjetas y adición de *placeholders* visuales robustos (`projects.html`, `projects.ts`).
+  - **Navegación**: Sustitución de bloques crudos de `<svg>` por directivas `<ng-icon>` en el `navbar.html`. Ajuste fino de la vista paralela de los logotipos, botones de call-to-action (`Descargar CV`) y control del estado en `navbar.ts`.
+- **Servicios y Modelos**: Refactorización y depuración en la estructura de datos (`portfolio.models.ts` y `data.service.ts`) para soportar nuevos requerimientos del front-end.
+- **Contenido**: Correcciones ortográficas sistemáticas aplicadas a los textos y de la data centralizada.
 
 ## [1.0.0] - 2026-04-05
 

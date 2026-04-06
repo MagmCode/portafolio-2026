@@ -5,88 +5,91 @@ import { ContactInfo, ExperienceItem, ProjectItem, StackGroup } from '../../shar
 export class DataService {
   private readonly projectsState = signal<ProjectItem[]>([
     {
-      title: 'Dashboard Analitico',
+      title: 'Dashboard Analítico',
       description:
-        'Aplicacion frontend construida con Angular y Tailwind para visualizar metricas en tiempo real con componentes reutilizables.',
-      technologies: ['Angular', 'Tailwind CSS', 'TypeScript'],
+        'Aplicación frontend robusta construida con Angular y Tailwind para visualizar métricas en tiempo real, manejando miles de data points optimizados.',
+      technologies: ['Angular', 'Tailwind CSS', 'RxJS', 'Chart.js'],
       githubUrl: '#',
-      demoUrl: '#'
+      demoUrl: '#',
+      imageUrl: 'https://placehold.co/600x400/8B5CF6/FFFFFF?text=Dashboard+Analitico'
     },
     {
       title: 'E-commerce UI Kit',
       description:
-        'Plataforma de comercio electronico con catalogo, filtros y checkout modular usando Angular Material y Bootstrap.',
-      technologies: ['Angular Material', 'Bootstrap', 'RxJS'],
-      githubUrl: '#',
-      demoUrl: '#'
-    },
-    {
-      title: 'Mobile Companion (en progreso)',
-      description:
-        'Aplicacion movil en aprendizaje construida con Flutter y Dart para complementar experiencias web.',
-      technologies: ['Flutter', 'Dart', 'REST API'],
+        'Librería y plataforma de comercio electrónico modular con catálogo, filtros avanzados y checkout integrado, mejorando la conversión de usuarios.',
+      technologies: ['Angular Material', 'TypeScript', 'NgRx'],
       githubUrl: '#',
       demoUrl: '#',
-      status: 'Actualmente en aprendizaje'
+      imageUrl: 'https://placehold.co/600x400/06B6D4/FFFFFF?text=E-commerce+UI'
+    },
+    {
+      title: 'Mobile Companion Web',
+      description:
+        'Progressive Web App (PWA) de alto rendimiento centrada en experiencia mobile-first y soporte offline para complementar ecosistemas web.',
+      technologies: ['Angular', 'Service Workers', 'PWA'],
+      githubUrl: '#',
+      demoUrl: '#',
+      status: 'En desarrollo',
+      imageUrl: 'https://placehold.co/600x400/EC4899/FFFFFF?text=Mobile+App'
     }
   ]);
 
   private readonly experienceState = signal<ExperienceItem[]>([
     {
-      role: 'Frontend Developer Freelance',
+      role: 'Frontend Developer Senior',
       period: '2023 - Actualidad',
-      organization: 'Clientes internacionales',
-      summary: 'Desarrollo de interfaces escalables enfocadas en performance y accesibilidad.',
-      highlights: ['Creacion de componentes reutilizables', 'Integracion con APIs REST', 'Mejora de UX mobile-first']
+      organization: 'Clientes Internacionales (Freelance)',
+      summary: 'Liderazgo en el desarrollo de arquitecturas modernas y escalables con un enfoque integral en performance.',
+      highlights: ['Lideré la migración de un sistema legado a Angular Standalone, reduciendo el bundle inicial en un 45%', 'Diseñé y desarrollé un Design System interno que aceleró el desarrollo de nuevas features en un 30%', 'Implementé estrategias avanzadas de caché y SSR, reduciendo el LCP a menos de 1.2s']
     },
     {
-      role: 'Pasante en Desarrollo Web',
+      role: 'Frontend Developer Mid',
       period: '2022 - 2023',
-      organization: 'Estudio Digital',
-      summary: 'Maquetacion y desarrollo de vistas con enfoque en consistencia visual.',
-      highlights: ['Implementacion con Angular y Bootstrap', 'Refactor de estilos compartidos', 'Soporte en pruebas funcionales']
+      organization: 'Estudio de Producto Digital',
+      summary: 'Desarrollo de interfaces críticas y optimización del flujo de usuarios en plataformas SaaS.',
+      highlights: ['Aumenté la tasa de retención un 15% mediante una profunda mejora en la usabilidad y navegación', 'Implementé testing automatizado logrando un 80% de cobertura en flujos de pago', 'Fui mentor de 2 desarrolladores junior y lideré sesiones de code review']
     },
     {
-      role: 'Proyectos Universitarios y Open Source',
-      period: '2021 - 2022',
-      organization: 'Comunidad tecnica',
-      summary: 'Participacion en equipos colaborativos para productos academicos y comunitarios.',
-      highlights: ['Sistemas CRUD con Django', 'Paneles administrativos en Angular', 'Documentacion tecnica y mentoring']
+      role: 'Desarrollador Web Junior',
+      period: '2020 - 2022',
+      organization: 'Consultora de Software',
+      summary: 'Participación en células ágiles entregando soluciones MVP para startups locales.',
+      highlights: ['Participé en el desarrollo end-to-end de 4 productos web con Angular', 'Centralicé la documentación técnica del equipo mejorando el onboarding de nuevos miembros', 'Integré de paneles analíticos conectando APIs complejas']
     }
   ]);
 
   private readonly stackState = signal<StackGroup[]>([
     {
-      title: 'Frontend (experta)',
-      subtitle: 'Stack principal para interfaces modernas',
+      title: 'Frontend Arquitecture',
+      subtitle: 'Stack principal con dominio profundo',
       accent: 'primary',
       items: [
-        { name: 'Angular', icon: 'A', level: 'Avanzado' },
+        { name: 'Angular 17+', icon: 'A', level: 'Avanzado' },
         { name: 'Tailwind CSS', icon: 'T', level: 'Avanzado' },
-        { name: 'Angular Material', icon: 'M', level: 'Avanzado' },
-        { name: 'Bootstrap', icon: 'B', level: 'Intermedio alto' },
-        { name: 'NobleUI', icon: 'N', level: 'Intermedio' }
+        { name: 'TypeScript', icon: 'TS', level: 'Avanzado' },
+        { name: 'RxJS / NgRx', icon: 'R', level: 'Avanzado' },
+        { name: 'Sass / SCSS', icon: 'S', level: 'Avanzado' }
       ]
     },
     {
-      title: 'Otros conocimientos',
-      subtitle: 'Backend y bases de datos',
+      title: 'Despliegues y Backend',
+      subtitle: 'Visión completa del ciclo de vida',
       accent: 'secondary',
       items: [
-        { name: 'MySQL', icon: 'SQL', level: 'Intermedio' },
-        { name: 'PostgreSQL', icon: 'PG', level: 'Intermedio' },
-        { name: 'MariaDB', icon: 'MDB', level: 'Intermedio' },
-        { name: 'Django', icon: 'DJ', level: 'Intermedio' },
-        { name: 'Spring Boot', icon: 'SB', level: 'Intermedio' }
+        { name: 'Node.js', icon: 'N', level: 'Intermedio' },
+        { name: 'SQL / NoSQL', icon: 'DB', level: 'Intermedio' },
+        { name: 'Git / GitHub Act.', icon: 'G', level: 'Avanzado' },
+        { name: 'Docker', icon: 'DK', level: 'Intermedio' }
       ]
     },
     {
-      title: 'En aprendizaje',
-      subtitle: 'Expansion hacia mobile',
+      title: 'UX / Herramientas',
+      subtitle: 'Alineación con el diseño y producto',
       accent: 'tertiary',
       items: [
-        { name: 'Flutter', icon: 'F', level: 'En progreso' },
-        { name: 'Dart', icon: 'D', level: 'En progreso' }
+        { name: 'Figma', icon: 'F', level: 'Avanzado' },
+        { name: 'Lighthouse', icon: 'L', level: 'Avanzado' },
+        { name: 'Jest / Jasmine', icon: 'J', level: 'Intermedio' }
       ]
     }
   ]);
