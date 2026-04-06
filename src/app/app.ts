@@ -1,14 +1,13 @@
-import { Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Footer } from './core/layout/footer/footer';
-import { Navbar } from './core/layout/navbar/navbar';
+import { FooterComponent } from './core/layout/footer/footer';
+import { NavbarComponent } from './core/layout/navbar/navbar';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Navbar, Footer],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [RouterOutlet, NavbarComponent, FooterComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App {
-  protected readonly title = signal('Portafolio MM 2026');
-}
+export class AppComponent {}

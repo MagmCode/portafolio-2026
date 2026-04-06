@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-footer',
+  selector: 'app-about',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
-  templateUrl: './footer.html',
-  styleUrl: './footer.scss'
+  templateUrl: './about.html'
 })
-export class FooterComponent {}
+export class AboutComponent {}

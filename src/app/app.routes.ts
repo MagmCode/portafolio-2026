@@ -1,13 +1,11 @@
 import { Routes } from '@angular/router';
-import { Home } from './features/home/home/home';
-
 export const routes: Routes = [
     {
         path: '',
-        component: Home
+        loadComponent: () => import('./features/home/home/home').then((m) => m.HomeComponent)
     },
     {
-    path: '**', // si intenta acceder a una ruta que no existe, lo redirigimos a la página de inicio
-    redirectTo: ''
+        path: '**',
+        redirectTo: ''
     }
 ];

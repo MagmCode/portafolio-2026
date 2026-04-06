@@ -2,14 +2,13 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
 
 @Component({
-  selector: 'app-experience',
+  selector: 'app-stack',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [],
-  templateUrl: './experience.html',
-  styleUrl: './experience.scss'
+  templateUrl: './stack.html'
 })
-export class ExperienceComponent {
+export class StackComponent {
   private readonly dataService = inject(DataService);
 
-  protected readonly experience = this.dataService.experience;
+  protected readonly stackGroups = this.dataService.stack;
 }

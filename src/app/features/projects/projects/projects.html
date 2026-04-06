@@ -1,1 +1,36 @@
-<p>projects works!</p>
+<section id="proyectos" class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+	<div class="mb-8 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+		<div>
+			<p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand-cyan">Proyectos</p>
+			<h2 class="mt-3 text-2xl font-semibold text-brand-text sm:text-3xl">Soluciones construidas con enfoque frontend</h2>
+		</div>
+	</div>
+
+	<div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+		@for (project of projects(); track project.title) {
+			<article class="group rounded-3xl border border-white/10 bg-brand-surface/70 p-6 shadow-soft backdrop-blur-xl transition duration-300 hover:-translate-y-1 hover:border-brand-primary/70">
+				<h3 class="text-xl font-semibold text-brand-text">{{ project.title }}</h3>
+				<p class="mt-3 text-sm text-brand-muted">{{ project.description }}</p>
+
+				@if (project.status) {
+					<p class="mt-3 inline-flex rounded-full border border-brand-pink/70 px-3 py-1 text-xs text-brand-pink">{{ project.status }}</p>
+				}
+
+				<ul class="mt-4 flex flex-wrap gap-2">
+					@for (tech of project.technologies; track tech) {
+						<li class="rounded-full border border-brand-cyan/30 bg-brand-bg/80 px-3 py-1 text-xs text-brand-cyan">{{ tech }}</li>
+					}
+				</ul>
+
+				<div class="mt-5 flex gap-3 text-sm">
+					<a [href]="project.githubUrl" target="_blank" rel="noreferrer" class="rounded-lg border border-white/20 px-3 py-2 text-brand-text transition hover:border-brand-cyan hover:text-brand-cyan">
+						GitHub
+					</a>
+					<a [href]="project.demoUrl" target="_blank" rel="noreferrer" class="rounded-lg border border-white/20 px-3 py-2 text-brand-text transition hover:border-brand-primary hover:text-brand-primary">
+						Demo
+					</a>
+				</div>
+			</article>
+		}
+	</div>
+</section>
