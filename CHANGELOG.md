@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Servicios y Modelos**: Refactorización y depuración en la estructura de datos (`portfolio.models.ts` y `data.service.ts`) para soportar nuevos requerimientos del front-end.
 - **Contenido**: Correcciones ortográficas sistemáticas aplicadas a los textos y de la data centralizada.
 
+### Fixed
+- Guardada la creación de `IntersectionObserver` durante SSR en `src/app/shared/directives/scroll-animate.directive.ts`.
+  - La directiva ahora inicializa la animación/observer solo en el navegador (`isPlatformBrowser`) y verifica `typeof IntersectionObserver`.
+
 ## [1.0.0] - 2026-04-05
 
 ### Added
