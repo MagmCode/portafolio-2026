@@ -9,12 +9,15 @@ html {
 }
 
 body {
-  background:
-    radial-gradient(circle at 10% 10%, rgba(139, 92, 246, 0.16), transparent 28%),
-    radial-gradient(circle at 85% 20%, rgba(6, 182, 212, 0.12), transparent 30%),
-    radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.1), transparent 26%),
-    #0f172a;
-  color: #f8fafc;
+  /* Fondo base: Combinación de #020024 y #0f172a para un tono azul muy oscuro */
+  background-color: #0d1223; 
+
+  /* Gradientes radiales para el efecto moderno y sutil */
+  background-image:
+    radial-gradient(circle at 10% 10%, rgba(138, 92, 246, 0.254), transparent 28%),
+    radial-gradient(circle at 50% 80%, rgba(6, 181, 212, 0.212), transparent 40%),
+    radial-gradient(circle at 85% 20%, rgba(26, 39, 185, 0.416), transparent 36%);
+  // color: #f8fafc;
   margin: 0;
   min-height: 100vh;
   font-family: Inter, sans-serif;

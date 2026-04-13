@@ -1,12 +1,30 @@
-import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { NgOptimizedImage } from '@angular/common'; // Eliminamos NgIf
+import { ChangeDetectionStrategy, Component, signal } from '@angular/core'; // Usaremos Signals para Angular 21
+import { NgIconComponent, provideIcons } from '@ng-icons/core';
+import { heroEnvelope } from '@ng-icons/heroicons/outline';
 import { ScrollAnimateDirective } from '../../../shared/directives/scroll-animate.directive';
 
 @Component({
   selector: 'app-hero',
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgOptimizedImage, ScrollAnimateDirective],
+  imports: [NgOptimizedImage, NgIconComponent, ScrollAnimateDirective],
   templateUrl: './hero.html',
-  styleUrl: './hero.scss'
+  styleUrls: ['./hero.scss'],
+  viewProviders: [provideIcons({ heroEnvelope })],
 })
-export class HeroComponent {}
+export class HeroComponent {
+  // En Angular 21, lo más pro es usar Signals para la detección de cambios
+  showToast = signal(false);
+
+  copyEmail(email: string) {
+    if (!email) return;
+
+    navigator.clipboard.writeText(email).then(() => {
+      this.showToast.set(true);
+      setTimeout(() => this.showToast.set(false), 3000);
+    }).catch(err => {
+      console.error('Error al copiar:', err);
+    });
+  }
+}

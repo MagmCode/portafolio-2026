@@ -25,6 +25,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Guardada la creación de `IntersectionObserver` durante SSR en `src/app/shared/directives/scroll-animate.directive.ts`.
   - La directiva ahora inicializa la animación/observer solo en el navegador (`isPlatformBrowser`) y verifica `typeof IntersectionObserver`.
 
+### 2026-04-12 — Cambios locales
+
+#### Added
+- Copia al portapapeles con feedback (toast) en la sección `hero`.
+- Creación de la lógica de copia al portapapeles a Angular Signals (`showToast`) y uso del control de flujo `@if` de Angular 21 para el toast.
+
+#### Changed
+- Rediseño tipográfico del `Hero` para enfatizar la jerarquía y tipografía (texto principal, subtítulo cian, descripción, CTAs). Implementación responsive.
+- Añadido fondo azul marino profundo con tres gradientes radiales sutiles y una tarjeta flip-card con efecto glassmorphism.
+- Reemplazo de SVGs por `ng-icon` para el icono de correo en la sección `hero`.
+
+#### Fixed
+- Correcciones de sintaxis y ajustes de imports en `HeroComponent` (resuelto duplicate `imports` y coma faltante antes de `viewProviders`).
+
+Files modified/created:
+- `src/app/features/home/hero/hero.html`
+- `src/app/features/home/hero/hero.scss`
+- `src/app/features/home/hero/hero.ts`
+- `src/styles.scss`
+- `src/index.html` 
+
 ## [1.0.0] - 2026-04-05
 
 ### Added
