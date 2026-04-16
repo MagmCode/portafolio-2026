@@ -1,6 +1,5 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
-import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import { heroArrowDownTray, heroBars3 } from '@ng-icons/heroicons/outline';
+import { NgIconComponent } from '@ng-icons/core';
 
 interface NavItem {
   label: string;
@@ -11,7 +10,6 @@ interface NavItem {
   selector: 'app-navbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [NgIconComponent],
-  viewProviders: [provideIcons({ heroArrowDownTray, heroBars3 })],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss'
 })

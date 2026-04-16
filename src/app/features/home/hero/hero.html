@@ -1,45 +1,56 @@
-<section id="inicio" appScrollAnimate class="relative mx-auto w-full max-w-7xl px-4 pb-20 pt-20 sm:px-6 lg:px-8 grid lg:grid-cols-2 lg:items-center gap-10">
+<section id="inicio" appScrollAnimate
+  class="relative mx-auto w-full max-w-7xl px-4 pb-40 pt-40 sm:px-6 lg:px-8 grid lg:grid-cols-2 lg:items-center gap-10">
   <div class="hero-deep-bg absolute inset-0 -z-10 rounded-[3rem] blur-3xl" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-3xl text-center lg:text-left">
-    <p class="text-xs font-mono uppercase tracking-[0.2em] text-secondary-500 mb-4">PORTAFOLIO PROFESIONAL</p>
+    <p class="text-md font-bold uppercase tracking-[0.1em] text-shadow-100 mb-4">¡Hola! soy</p>
 
     <h1 class="text-5xl sm:text-6xl font-extrabold text-white leading-tight">Maria Guedez</h1>
 
     <p class="mt-4 text-xl text-cyan-400">Software Engineer • Web Developer</p>
 
-    <p class="mt-6 text-neutral-400">Construyo experiencias web modernas, rápidas y accesibles.</p>
+    <p class="mt-6 text-neutral-200">Construyo experiencias web modernas, rápidas y accesibles.</p>
 
     <div class="mt-8 flex items-center gap-6 justify-center lg:justify-start flex-wrap">
       <div class="flex gap-3">
-        <a href="#proyectos" class="inline-flex items-center rounded-full px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold transition-transform transform hover:-translate-y-0.5">Ver proyectos</a>
+        <a href="#proyectos"
+          class="inline-flex items-center rounded-full px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-semibold transition-transform transform hover:-translate-y-0.5">Ver
+          proyectos</a>
 
-        <a href="assets/cv-maria-guedez.pdf" download class="inline-flex items-center rounded-full px-6 py-3 rounded-full border border-primary-500/60 bg-primary-500/10  text-primary-200 font-semibold text-neutral-100 transition hover:border-accent-primary hover:text-accent-primary hover:-translate-y-0.5 sm:inline-flex">Descargar CV</a>
-      </div>
-
-      <div class="quick-links flex items-center gap-4 text-sm text-neutral-300">
-        <button (click)="copyEmail('mariaaguedez.08@gmail.com')" class="flex items-center gap-2 px-3 py-2 rounded-md bg-white/3 hover:bg-white/5" aria-label="Copiar correo">
-          <ng-icon name="heroEnvelope" class="text-neutral-100" aria-hidden="true"></ng-icon>
-          <span>mariaaguedez.08@gmail.com</span>
-        </button>
-
-        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub" class="p-2 rounded hover:bg-white/3">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 .5C5.73.5.86 5.37.86 11.64c0 4.78 3.1 8.83 7.41 10.26.54.1.74-.24.74-.52 0-.26-.01-1.12-.02-2.03-3.01.66-3.65-1.45-3.65-1.45-.49-1.26-1.2-1.6-1.2-1.6-.98-.67.07-.66.07-.66 1.08.08 1.65 1.11 1.65 1.11.96 1.64 2.52 1.17 3.13.9.1-.7.38-1.17.69-1.44-2.4-.27-4.92-1.2-4.92-5.32 0-1.18.42-2.15 1.11-2.91-.11-.27-.48-1.36.11-2.83 0 0 .89-.29 2.92 1.1a10.16 10.16 0 0 1 2.66-.36c.9.01 1.8.12 2.66.36 2.03-1.39 2.92-1.1 2.92-1.1.59 1.47.22 2.56.11 2.83.69.76 1.11 1.73 1.11 2.91 0 4.13-2.53 5.04-4.94 5.31.39.34.73 1.01.73 2.04 0 1.48-.01 2.67-.01 3.03 0 .29.19.63.75.52 4.31-1.44 7.41-5.49 7.41-10.26C23.14 5.37 18.27.5 12 .5z" fill="currentColor"/>
-          </svg>
-        </a>
-
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn" class="p-2 rounded hover:bg-white/3">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8h4.6V24H.2V8zM8.98 8h4.41v2.16h.06c.61-1.16 2.11-2.39 4.34-2.39 4.64 0 5.49 3.05 5.49 7.01V24h-4.6v-7.12c0-1.7-.03-3.88-2.37-3.88-2.37 0-2.73 1.85-2.73 3.76V24h-4.6V8z" fill="currentColor"/>
-          </svg>
-        </a>
+        <a href="assets/cv-maria-guedez.pdf" download
+          class="inline-flex items-center rounded-full px-6 py-3 rounded-full border border-primary-500/60 bg-primary-500/10  text-primary-200 font-semibold text-neutral-100 transition hover:border-accent-primary hover:text-accent-primary hover:-translate-y-0.5 sm:inline-flex">Descargar
+          CV</a>
       </div>
     </div>
-  </div>
+
+      <div class="quick-links mt-6 flex items-center gap-1 text-sm text-neutral-300">
+
+        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"
+          class="p-2 rounded hover:bg-white/3">
+          <ng-icon name="octMarkGithub" class="text-neutral-100" aria-hidden="true" size="20"></ng-icon>
+        </a>
+
+        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"
+          class="p-2 rounded hover:bg-white/3">
+          <ng-icon name="ionLogoLinkedin" class="text-neutral-100" aria-hidden="true" size="20"></ng-icon>
+        </a>
+
+        <a href="https://wa.me/1234567890" target="_blank" rel="noopener" aria-label="WhatsApp"
+          class="p-2 rounded hover:bg-white/3">
+          <ng-icon name="ionLogoWhatsapp" class="text-neutral-100" aria-hidden="true" size="20"></ng-icon>
+        </a>
+
+        <button (click)="copyEmail('mariaaguedez.08@gmail.com')"
+          class="group flex items-center gap-2 px-3 py-2 rounded-md bg-white/3 hover:bg-white/5 hover:bg-white/5 transition" aria-label="Copiar correo">
+          <ng-icon name="octMail" class="text-neutral-100" aria-hidden="true" size="18"></ng-icon>
+          <span class="ml-2 overflow-hidden max-w-0 transition-all duration-300 ease-in-out group-hover:max-w-[220px] group-focus:max-w-[220px] group-hover:opacity-100 group-focus:opacity-100 whitespace-nowrap">mariaaguedez.08@gmail.com</span>
+        </button>
+
+      </div>
+    </div>
 
   <div class="relative flex justify-center lg:justify-end">
-    <div class="absolute h-56 w-56 rounded-full bg-secondary-500/25 blur-3xl"></div>
+    <div class="absolute h-56 w-56 rounded-full "></div>
 
     <div class="hero-card">
       <div class="flip-card" title="Hover para ver">
@@ -53,8 +64,11 @@
           <div class="flip-card-back">
             <div class="placeholder" role="img" aria-label="Placeholder de imagen de perfil">
               <div class="avatar-frame" aria-hidden="true">
-                <svg width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zM3 21c0-3.866 3.134-7 7-7h4c3.866 0 7 3.134 7 7v1H3v-1z" fill="#94A3B8" />
+                <svg width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zM3 21c0-3.866 3.134-7 7-7h4c3.866 0 7 3.134 7 7v1H3v-1z"
+                    fill="#94A3B8" />
                 </svg>
               </div>
               <p class="placeholder-text">Tu Imagen Aquí (Al hacer Hover)</p>
@@ -66,21 +80,29 @@
   </div>
 </section>
 
+
+<!-- 
+NOTA: El siguiente bloque de código es para mostrar un toast de "¡Copiado!" cuando el usuario hace clic en el botón de copiar correo. Este código puede ser colocado en un componente global para mejorar el manejo de estados y evitar duplicación en otras partes de la aplicación. Manteniendo un codigo DRY
+-->
+
+
 <!-- Toast (copiado) -->
 @if (showToast()) {
-  <div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 animate-in fade-in slide-in-from-bottom-5">
-    <div class="max-w-sm w-full bg-primary-500/20 border border-primary-500/20 backdrop-blur-2xl rounded-xl p-4 shadow-2xl">
-      <div class="flex items-center gap-3">
-        <div class="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-          </svg>
-        </div>
-        <div>
-          <div class="text-white text-sm">¡Copiado!</div>
-          <p class="text-xs text-neutral-200">Correo copiado al portapapeles</p>
-        </div>
+<div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 animate-in fade-in slide-in-from-bottom-5">
+  <div
+    class="max-w-sm w-full bg-primary-500/20 border border-primary-500/20 backdrop-blur-2xl rounded-xl p-4 shadow-2xl">
+    <div class="flex items-center gap-3">
+      <div class="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+          class="size-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+        </svg>
+      </div>
+      <div>
+        <div class="text-white text-sm">¡Copiado!</div>
+        <p class="text-xs text-neutral-200">Correo copiado al portapapeles</p>
       </div>
     </div>
   </div>
+</div>
 }

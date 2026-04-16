@@ -1,7 +1,6 @@
 import { NgOptimizedImage } from '@angular/common'; // Eliminamos NgIf
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core'; // Usaremos Signals para Angular 21
-import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import { heroEnvelope } from '@ng-icons/heroicons/outline';
+import { NgIconComponent } from '@ng-icons/core';
 import { ScrollAnimateDirective } from '../../../shared/directives/scroll-animate.directive';
 
 @Component({
@@ -11,7 +10,6 @@ import { ScrollAnimateDirective } from '../../../shared/directives/scroll-animat
   imports: [NgOptimizedImage, NgIconComponent, ScrollAnimateDirective],
   templateUrl: './hero.html',
   styleUrls: ['./hero.scss'],
-  viewProviders: [provideIcons({ heroEnvelope })],
 })
 export class HeroComponent {
   // En Angular 21, lo más pro es usar Signals para la detección de cambios

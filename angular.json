@@ -77,6 +77,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "port": 2003
+          },
           "configurations": {
             "production": {
               "buildTarget": "portafolio-2026:build:production"
