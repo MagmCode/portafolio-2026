@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Implementación de animaciones modernas al hacer *scroll* mediante la creación de la directiva especializada `scroll-animate.directive.ts`.
 - Instalación de la librería `@ng-icons/core` y `@ng-icons/heroicons` (`package.json` y `package-lock.json`) para la gestión avanzada de íconos vectoriales.
 - Despliegue de íconos SVG dinámicos mediante inyección de `<ng-icon>` en el `NavbarComponent`.
+ - `src/app/shared/icons.ts`: archivo central para registrar iconos usados por la app (heroicons, ionicons, octicons).
 
 ### Changed
 - **UX/UI Portfolio Professional Revamp:** (Afectando: `hero`, `about`, `stack`, `projects`, `experience`, `contact`, `navbar`, `footer`):
@@ -20,10 +21,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - **Navegación**: Sustitución de bloques crudos de `<svg>` por directivas `<ng-icon>` en el `navbar.html`. Ajuste fino de la vista paralela de los logotipos, botones de call-to-action (`Descargar CV`) y control del estado en `navbar.ts`.
 - **Servicios y Modelos**: Refactorización y depuración en la estructura de datos (`portfolio.models.ts` y `data.service.ts`) para soportar nuevos requerimientos del front-end.
 - **Contenido**: Correcciones ortográficas sistemáticas aplicadas a los textos y de la data centralizada.
+ - `angular.json`, `package.json`, `package-lock.json`: dependencias y ajustes relacionados con librerías de iconos.
+ - `src/app/app.config.ts`: registro global de iconos usando `provideIcons(appIcons)`.
+ - `src/app/features/home/hero/hero.html`: reubicado `quick-links` debajo de los CTAs; el correo ahora se muestra como overlay (evita reflow) y la animación usa utilidades Tailwind (`group-hover`/`group-focus`).
+ - `src/app/features/home/hero/hero.scss`: ajustes de estilos y soporte de focus outlines.
+ - `src/app/features/home/hero/hero.ts`: eliminado registro local de iconos; uso de `NgIconComponent` y Signals para el toast.
+ - `src/app/core/layout/navbar/navbar.ts`: eliminado registro local de iconos (usa registry global).
 
 ### Fixed
 - Guardada la creación de `IntersectionObserver` durante SSR en `src/app/shared/directives/scroll-animate.directive.ts`.
   - La directiva ahora inicializa la animación/observer solo en el navegador (`isPlatformBrowser`) y verifica `typeof IntersectionObserver`.
+ - Evitado el bug donde mostrar el correo en hover empujaba/rompía el layout: `quick-links` se movió fuera del mismo flex de los CTAs y el texto del correo se muestra en un overlay absoluto, previniendo reflow y manteniendo hover/focus y accesibilidad.
+ - Centralizado el registro de iconos para evitar duplicación e inconsistencias entre componentes.
 
 ### 2026-04-12 — Cambios locales
 
@@ -44,7 +53,7 @@ Files modified/created:
 - `src/app/features/home/hero/hero.scss`
 - `src/app/features/home/hero/hero.ts`
 - `src/styles.scss`
-- `src/index.html` 
+- `src/index.html`
 
 ## [1.0.0] - 2026-04-05
 
