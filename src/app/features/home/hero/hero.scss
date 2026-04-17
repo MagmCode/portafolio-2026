@@ -69,11 +69,11 @@
 	justify-content: center;
 	padding: 1.25rem;
 	box-sizing: border-box;
-	border: 1px solid rgba(255,255,255,0.06);
-	background: rgba(255,255,255,0.02);
-	backdrop-filter: blur(6px);
-	-webkit-backdrop-filter: blur(6px);
-	box-shadow: 0 12px 40px rgba(2,6,23,0.45);
+	// border: 1px transparent rgba(70, 91, 227, 0.06);
+	// background: rgba(55, 0, 255, 0.02);
+	// backdrop-filter: blur(1px);
+	// -webkit-backdrop-filter: blur(1px);
+	// box-shadow: 0 12px 40px rgba(28, 28, 99, 0.45);
 }
 
 .flip-card-front { z-index: 2; transform: rotateY(0deg); }
@@ -89,10 +89,9 @@
 	border-radius: inherit;
 }
 .logo-engraved img {
-	width: 360px;
-	height: 250px;
+	width: auto;
+    height: 320px;
 	object-fit: contain;
-	filter: grayscale(0.05) contrast(0.95) brightness(0.95);
 	opacity: 0.95;
 	mix-blend-mode: overlay;
 }
@@ -125,8 +124,8 @@
 
 /* Make sure the card stays visually lightweight on small screens */
 @media (max-width: 640px) {
-	.flip-card { width: 220px; height: 220px; }
-	.logo-engraved img { width: 140px; height: 140px; }
+	.flip-card { width: 250px; height: 250px; }
+	.logo-engraved img { width: 230px; height: 230px; }
 }
 
 /* Typographic hero styles */

@@ -1,4 +1,4 @@
-import { heroEnvelope, heroArrowDownTray, heroBars3 } from '@ng-icons/heroicons/outline';
+import { heroEnvelope, heroArrowDownTray, heroBars3, heroBars3BottomRight } from '@ng-icons/heroicons/outline';
 import { ionLogoLinkedin, ionLogoWhatsapp } from '@ng-icons/ionicons';
 import { octMail, octMarkGithub } from '@ng-icons/octicons';
 
@@ -10,6 +10,7 @@ export const appIcons = {
   heroEnvelope,
   heroArrowDownTray,
   heroBars3,
+  heroBars3BottomRight,
 
   ionLogoLinkedin,
   ionLogoWhatsapp,

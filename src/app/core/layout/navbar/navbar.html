@@ -4,13 +4,13 @@
     <a href="#inicio" class="group inline-flex items-center gap-3" aria-label="Ir al inicio">
       <div class="flex transition duration-300 group-hover:scale-105 " >
       <img src="assets/MG/Logo_MG.png" alt="" aria-hidden="true" class="h-18 w-16" />
-      <img src="assets/MG/logo_nombre_completo.png" alt="" aria-hidden="true" class="h-14 w-22 mt-3" />
+      <img src="assets/MG/logo_nombre_completo.png" alt="" aria-hidden="true" class="h-14 w-22 mt-3 sm:inline hidden" />
       <!-- <span class="text-sm font-semibold tracking-[0.24em] text-neutral-100 sm:text-base">MARIA GUEDEZ</span> -->
        </div>
     </a>
 
     <nav class="hidden lg:block" aria-label="Navegacion principal">
-      <ul class="flex items-center gap-6 text-sm">
+      <ul class="flex items-center gap-10 text-sm">
         @for (item of navItems; track item.href) {
           <li>
             <a [href]="item.href" class="text-shadow-100 transition hover:text-accent-primary">{{ item.label }}</a>
@@ -23,7 +23,7 @@
       <a
         href="assets/cv-maria-guedez.pdf"
         download="cv-maria-guedez.pdf"
-        class="hidden items-center gap-2 rounded-full border border-primary-500/60 bg-primary-500/10 px-4 py-4 text-xs text-primary-200 font-semibold uppercase tracking-[0.15em] text-neutral-100 transition hover:border-accent-primary hover:text-accent-primary sm:inline-flex"
+        class="btn btn-accent uppercase text-xs tracking-[0.15em] inline-flex intems-centter gap-2 sm:inline-flex hidden"
       >
         <ng-icon name="heroArrowDownTray" class="text-base"></ng-icon>
         Descargar CV
@@ -31,13 +31,13 @@
 
       <button
         type="button"
-        class="inline-flex rounded-xl border border-white/15 bg-white/5 p-2 text-neutral-100 transition hover:border-accent-secondary hover:text-accent-secondary lg:hidden"
+        class="inline-flex rounded-xl p-2 mr-3 text-neutral-100 transition hover:border-accent-secondary hover:text-accent-secondary/80 lg:hidden"
         (click)="toggleMenu()"
         [attr.aria-expanded]="isMenuOpen()"
         aria-controls="mobile-navigation"
         aria-label="Abrir menu"
       >
-        <ng-icon name="heroBars3" class="text-xl"></ng-icon>
+        <ng-icon name="heroBars3BottomRight" class="text-3xl"></ng-icon>
       </button>
     </div>
   </div>
@@ -60,7 +60,7 @@
       <a
         href="assets/cv-maria-guedez.pdf"
         download="cv-maria-guedez.pdf"
-        class="mt-4 inline-flex items-center gap-2 rounded-full border border-primary-500/60 bg-primary-500/10 px-4 py-4 text-xs text-primary-300 font-semibold uppercase tracking-[0.15em] text-neutral-100 transition hover:border-accent-primary hover:text-accent-primary"
+        class="btn btn-accent uppercase text-xs tracking-[0.1em] mt-4 inline-flex intems-centter gap-2"
       >
         <ng-icon name="heroArrowDownTray" class="text-base"></ng-icon>
         Descargar CV

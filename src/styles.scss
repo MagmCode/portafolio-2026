@@ -10,7 +10,7 @@ html {
 
 body {
   /* Fondo base: Combinación de #020024 y #0f172a para un tono azul muy oscuro */
-  background-color: #0d1223; 
+  background-color: #0d1223;
 
   /* Gradientes radiales para el efecto moderno y sutil */
   background-image:
@@ -28,4 +28,47 @@ h2,
 h3,
 h4 {
   font-family: Poppins, sans-serif;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full font-semibold h-12 min-w-[10rem] overflow-hidden whitespace-nowrap; }
+.btn-text { @apply truncate; ;
+  }
+
+  .btn-primary {
+    @apply  shadow shadow-accent-primary  bg-gradient-to-r from-primary-500/40 to-secondary-500/10 text-shadow-100 text-shadow-100 transition-transform transform;
+    &:hover {
+      @apply -translate-y-0.5 bg-gradient-to-r from-primary-500/60 to-secondary-500/30;
+    }
+  }
+
+  .btn-secondary {
+    @apply  shadow shadow-accent-secondary bg-gradient-to-r from-primary-500/40 to-secondary-500/10 text-shadow-100 text-shadow-100 transition-transform transform;
+    &:hover {
+      @apply  -translate-y-0.5 bg-gradient-to-r from-primary-500/60 to-secondary-500/30;
+    }
+  }
+
+  .btn-accent {
+    @apply  border border-primary-500/60 bg-primary-500/10   text-primary-200 transition;
+    &:hover {
+      @apply border-accent-primary text-accent-primary -translate-y-0.5;
+    }
+  }
+
+
+  /* tamaños */
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm rounded-xl;
+  }
+
+  .btn-lg {
+    @apply px-8 py-3.5 text-lg;
+  }
+
+//   /* foco accesible */
+//   .btn:focus-visible {
+//     @apply outline-none ring-2 ring-primary-400 ring-offset-2;
+//   }
 }

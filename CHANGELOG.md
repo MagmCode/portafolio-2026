@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Instalación de la librería `@ng-icons/core` y `@ng-icons/heroicons` (`package.json` y `package-lock.json`) para la gestión avanzada de íconos vectoriales.
 - Despliegue de íconos SVG dinámicos mediante inyección de `<ng-icon>` en el `NavbarComponent`.
  - `src/app/shared/icons.ts`: archivo central para registrar iconos usados por la app (heroicons, ionicons, octicons).
+ - Reutilizables de UI: añadidas utilidades de botones en `src/styles.scss` (`.btn`, `.btn-primary`, `.btn-secondary`, `.btn-accent`, `.btn-sm`, `.btn-lg`) para CTA consistentes y control de tamaños.
 
 ### Changed
 - **UX/UI Portfolio Professional Revamp:** (Afectando: `hero`, `about`, `stack`, `projects`, `experience`, `contact`, `navbar`, `footer`):
@@ -27,6 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
  - `src/app/features/home/hero/hero.scss`: ajustes de estilos y soporte de focus outlines.
  - `src/app/features/home/hero/hero.ts`: eliminado registro local de iconos; uso de `NgIconComponent` y Signals para el toast.
  - `src/app/core/layout/navbar/navbar.ts`: eliminado registro local de iconos (usa registry global).
+ - `src/styles.scss`: añadidas utilidades reutilizables de botones (`.btn`, `.btn-primary`, `.btn-secondary`, `.btn-accent`, `.btn-sm`, `.btn-lg`) y reglas de sizing para evitar desbalance visual.
+ - `src/app/features/home/hero/hero.html`: CTAs actualizados para usar `btn`/`btn-primary`/`btn-secondary` y tamaños consistentes para mantener equilibrio visual.
 
 ### Fixed
 - Guardada la creación de `IntersectionObserver` durante SSR en `src/app/shared/directives/scroll-animate.directive.ts`.
