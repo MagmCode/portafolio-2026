@@ -12,7 +12,8 @@ import { ScrollAnimateDirective } from '../../../shared/directives/scroll-animat
   styleUrls: ['./hero.scss'],
 })
 export class HeroComponent {
-  // En Angular 21, lo más pro es usar Signals para la detección de cambios
+  yearsOfExperience = new Date().getFullYear() - 2022;
+
   showToast = signal(false);
 
   copyEmail(email: string) {

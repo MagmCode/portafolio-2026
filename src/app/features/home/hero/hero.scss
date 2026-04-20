@@ -90,11 +90,34 @@
 }
 .logo-engraved img {
 	width: auto;
-    height: 320px;
+	height: 320px;
 	object-fit: contain;
-	opacity: 0.95;
-	mix-blend-mode: overlay;
+	mix-blend-mode: normal; /* evitar saturar el logo con el degradado */
 }
+
+/* Fix: evita pequeño desplazamiento al rotar la flip-card */
+.logo-engraved img,
+.profile-image img {
+	display: block;
+	backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
+	transform: translateZ(0); /* fuerza creación de capa compuesta */
+	will-change: transform, opacity;
+}
+
+/* Asegura que los contenedores frontal/trasero compartan tamaño y padding */
+.engraved-image,
+.profile-image {
+	width: 20rem; /* tailwind w-80 */
+	height: 20rem; /* tailwind h-80 */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Forzar aislamiento para que el degradado quede DETRÁS sin afectar el logo */
+.engraved-image { isolation: isolate; }
+
 
 /* Placeholder back panel styles */
 .placeholder {
@@ -131,24 +154,24 @@
 /* Typographic hero styles */
 .quick-links button,
 .quick-links a {
-	color: #E6EEF8;
+	// color: #E6EEF8;
 	display: inline-flex;
 	align-items: center;
 }
 
-.quick-links svg { color: #E6EEF8; opacity: 0.95; }
+// .quick-links svg { color: #E6EEF8; opacity: 0.95; }
 
-/* Subtle pill button neutral/ghost style when Tailwind utilities need a complement */
-.quick-links .ghost {
-	border: 1px solid rgba(255,255,255,0.06);
-	background: transparent;
-}
+// /* Subtle pill button neutral/ghost style when Tailwind utilities need a complement */
+// .quick-links .ghost {
+// 	border: 1px solid rgba(255,255,255,0.06);
+// 	background: transparent;
+// }
 
-/* Ensure focus outlines are visible for keyboard users */
-.quick-links button:focus,
-.quick-links a:focus,
-.hero-card a:focus,
-.hero-card button:focus {
-	outline: 2px solid rgba(99,102,241,0.32);
-	outline-offset: 2px;
-}
+// /* Ensure focus outlines are visible for keyboard users */
+// .quick-links button:focus,
+// .quick-links a:focus,
+// .hero-card a:focus,
+// .hero-card button:focus {
+// 	outline: 2px solid rgba(99,102,241,0.32);
+// 	outline-offset: 2px;
+// }

@@ -18,10 +18,10 @@ export class NavbarComponent {
 
   protected readonly navItems: NavItem[] = [
     { label: 'Inicio', href: '#inicio' },
-    { label: 'Sobre mí', href: '#sobre-mi' },
-    { label: 'Stack', href: '#stack' },
     { label: 'Proyectos', href: '#proyectos' },
     { label: 'Experiencia', href: '#experiencia' },
+    { label: 'Stack', href: '#stack' },
+    { label: 'Sobre mí', href: '#sobre-mi' },
     { label: 'Contacto', href: '#contacto' }
   ];
 

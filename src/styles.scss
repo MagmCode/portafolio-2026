@@ -37,25 +37,36 @@ h4 {
   }
 
   .btn-primary {
-    @apply  shadow shadow-accent-primary  bg-gradient-to-r from-primary-500/40 to-secondary-500/10 text-shadow-100 text-shadow-100 transition-transform transform;
+    @apply  shadow shadow-accent-primary  bg-gradient-to-r from-accent-primary/40 to-secondary-500/60 text-shadow-100 text-shadow-100 transition-transform transform;
     &:hover {
-      @apply -translate-y-0.5 bg-gradient-to-r from-primary-500/60 to-secondary-500/30;
+      @apply -translate-y-0.5 bg-gradient-to-r from-accent-primary/60 to-secondary-500/80 ;
     }
   }
 
   .btn-secondary {
-    @apply  shadow shadow-accent-secondary bg-gradient-to-r from-primary-500/40 to-secondary-500/10 text-shadow-100 text-shadow-100 transition-transform transform;
+    @apply  shadow shadow-accent-secondary bg-gradient-to-r from-primary-500/5 to-secondary-500/15 text-shadow-100 text-shadow-100 transition-transform transform;
     &:hover {
-      @apply  -translate-y-0.5 bg-gradient-to-r from-primary-500/60 to-secondary-500/30;
+      @apply  -translate-y-0.5 bg-gradient-to-r from-primary-500/30 to-secondary-500/80;
     }
   }
 
   .btn-accent {
     @apply  border border-primary-500/60 bg-primary-500/10   text-primary-200 transition;
     &:hover {
-      @apply border-accent-primary text-accent-primary -translate-y-0.5;
+      /* Avoid changing layout (height). Use transform for hover effect. */
+      @apply border-accent-primary text-accent-primary -translate-y-0.5 scale-105;
+      ng-icon {
+        @apply transition-transform transform scale-110;
+      }
     }
   }
+
+  // .btn-accent ng-icon {
+  //   @apply transition-transform transform ;
+  //   &:hover {
+  //     @apply size-20;
+  //   }
+  // }
 
 
   /* tamaños */
@@ -71,4 +82,30 @@ h4 {
 //   .btn:focus-visible {
 //     @apply outline-none ring-2 ring-primary-400 ring-offset-2;
 //   }
+
+  /* Icon button reusable for quick links */
+  .icon-btn {
+    @apply text-neutral-100 inline-flex items-center justify-center transition-transform duration-150 ease-in-out transform;
+  }
+  .icon-btn:hover {
+    @apply scale-110 text-accent-secondary;
+  }
+  // .icon-btn:focus-visible {
+  //   @apply outline-none ring-2 ring-primary-100 ring-offset-2 text-accent-secondary;
+  // }
+
+  /* Separadores verticales entre quick-links (estilo pipe) */
+  .quick-links > * + *::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 1.85rem; /* ~20px */
+    background: rgba(230,235,248,0.08);
+    margin-inline: 0.80rem;
+    vertical-align: middle;
+    pointer-events: none;
+    border-radius: 999px;
+    filter: blur(0.6px);
+    transform: translateY(0);
+  }
 }

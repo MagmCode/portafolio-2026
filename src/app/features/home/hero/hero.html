@@ -3,16 +3,16 @@
   <div class="hero-deep-bg absolute inset-0 -z-10 rounded-[3rem] blur-3xl" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-3xl text-center lg:text-left">
-    <p class="text-md font-bold uppercase tracking-[0.1em] text-shadow-100 mb-4">¡Hola! soy</p>
+    <p class="text-md font-bold uppercase tracking-[0.1em] text-shadow-100 mb-4">¡Hola! Yo soy</p>
 
     <h1 class="text-5xl sm:text-6xl font-extrabold text-white leading-tight">Maria Guedez</h1>
 
     <p class="mt-4 text-xl text-cyan-400">Software Engineer • Web Developer</p>
 
-    <p class="mt-6 text-neutral-200">Construyo experiencias web modernas, rápidas y accesibles.</p>
+    <p class="mt-6 text-neutral-200">Con +{{yearsOfExperience}} años de experiencia, disfruto resolver problemas complejos con la misma lógica y paciencia que requiere armar un cubo de Rubik, hasta que un diseño deja de ser estático y cobra vida en el navegador.</p>
 
     <div class="mt-8 flex items-center gap-6 justify-center lg:justify-start flex-wrap">
-      <div class="flex gap-5">
+      <div class="flex gap-8">
         <a href="#proyectos"
           class="btn btn-primary">Ver proyectos</a>
 
@@ -21,27 +21,24 @@
       </div>
     </div>
 
-      <div class="quick-links mt-6 flex items-center gap-1 text-sm text-neutral-300">
+      <div class="quick-links mt-10 pl-3 flex items-center">
 
-        <a href="https://github.com/" target="_blank" rel="noopener" aria-label="GitHub"
-          class="p-2 rounded hover:bg-white/3">
-          <ng-icon name="octMarkGithub" class="text-neutral-100" aria-hidden="true" size="20"></ng-icon>
+        <a href="https://github.com/MagmCode"  target="_blank" rel="noopener" aria-label="GitHub">
+          <ng-icon name="octMarkGithub" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
         </a>
 
-        <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"
-          class="p-2 rounded hover:bg-white/3">
-          <ng-icon name="ionLogoLinkedin" class="text-neutral-100" aria-hidden="true" size="20"></ng-icon>
+        <a href="https://www.linkedin.com/in/maria-guedez-code" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <ng-icon name="ionLogoLinkedin" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
         </a>
 
-        <a href="https://wa.me/1234567890" target="_blank" rel="noopener" aria-label="WhatsApp"
-          class="p-2 rounded hover:bg-white/3">
-          <ng-icon name="ionLogoWhatsapp" class="text-neutral-100" aria-hidden="true" size="20"></ng-icon>
+        <a href="https://wa.me/+584122887873" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <ng-icon name="ionLogoWhatsapp" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
         </a>
 
         <button (click)="copyEmail('mariaaguedez.08@gmail.com')"
-          class="group flex items-center gap-2 px-3 py-2 rounded-md bg-white/3 hover:bg-white/5 hover:bg-white/5 transition" aria-label="Copiar correo">
-          <ng-icon name="octMail" class="text-neutral-100" aria-hidden="true" size="18"></ng-icon>
-          <span class="ml-2 overflow-hidden max-w-0 transition-all duration-300 ease-in-out group-hover:max-w-[220px] group-focus:max-w-[220px] group-hover:opacity-100 group-focus:opacity-100 whitespace-nowrap">mariaaguedez.08@gmail.com</span>
+          class="group   items-center" aria-label="Copiar correo">
+          <ng-icon name="octMail" title="Copiar" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
+          <span class="ml-2 overflow-hidden text-shadow-100 max-w-0 transition-all duration-300 ease-in-out group-hover:max-w-[250px] group-focus:max-w-[250px]  whitespace-nowrap">mariaaguedez.08@gmail.com</span>
         </button>
 
       </div>
@@ -51,25 +48,28 @@
     <div class="absolute h-56 w-56 rounded-full "></div>
 
     <div class="hero-card">
-      <div class="flip-card" title="Hover para ver">
+      <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <div class="logo-engraved" aria-hidden="true">
-              <img ngSrc="assets/MG/Logo_MG.png" alt="MG logo" width="280" height="280" priority />
+            <div class="engraved-image mx-auto w-80 h-80 relative isolate" aria-hidden="true" role="img" aria-label="Logo">
+              <div class="absolute inset-0 rounded-full bg-gradient-to-r from-accent-secondary to-accent-primary blur-xl opacity-10 z-0" aria-hidden="true"></div>
+              <div class="logo-engraved relative rounded-full p-2 bg-transparent z-10" aria-hidden="true">
+                <img ngSrc="assets/MG/Logo_MG.png" alt="MG logo" width="280" height="280"
+                  class=" object-contain w-80 h-80 mx-auto mix-blend-normal" priority />
+              </div>
             </div>
           </div>
 
           <div class="flip-card-back">
-            <div class="placeholder" role="img" aria-label="Placeholder de imagen de perfil">
-              <div class="avatar-frame" aria-hidden="true">
-                <svg width="72" height="72" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
-                  aria-hidden="true">
-                  <path
-                    d="M12 12c2.761 0 5-2.239 5-5s-2.239-5-5-5-5 2.239-5 5 2.239 5 5 5zM3 21c0-3.866 3.134-7 7-7h4c3.866 0 7 3.134 7 7v1H3v-1z"
-                    fill="#94A3B8" />
-                </svg>
-              </div>
-              <p class="placeholder-text">Tu Imagen Aquí (Al hacer Hover)</p>
+           <div class="profile-image mx-auto w-80 h-80 relative" role="img" aria-label="Foto de perfil de Maria Guedez">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-accent-secondary to-accent-primary blur-2xl opacity-30"></div>
+            <div class="relative rounded-full p-2 bg-transparent">
+              <img ngSrc="assets/MG/profile_pic.png"
+                    alt="Foto de perfil de Maria Guedez"
+                    width="280" height="280"
+                    class="border border-accent-primary/50   rounded-full object-cover w-80 h-80 mx-auto"
+                    priority />
+            </div>
             </div>
           </div>
         </div>
