@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  portafolio-web:
+    build: .
+    container_name: maria_portafolio_frontend
+    ports:
+      - "2026:2026"
+    restart: always
