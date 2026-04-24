@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+- Docker: añadidos `Dockerfile`, `docker-compose.yml` y `nginx.conf` para despliegue contenerizado (configuración básica de nginx como proxy / static server).
+
+### Changed
+- Optimización de imágenes: se convirtieron activos gráficos (PNG/JPG) a WebP en `src/assets/` para reducir peso de las imágenes y mejorar tiempos de carga.
+
+
 
 ## [1.1.0] - 2026-04-19
 
@@ -16,7 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Despliegue de íconos SVG dinámicos mediante inyección de `<ng-icon>` en el `NavbarComponent`.
   - `src/app/shared/icons.ts`: archivo central para registrar iconos usados por la app (heroicons, ionicons, octicons).
   - Reutilizables de UI: añadidas utilidades de botones en `src/styles.scss` (`.btn`, `.btn-primary`, `.btn-secondary`, `.btn-accent`, `.btn-sm`, `.btn-lg`) para CTA consistentes y control de tamaños.
-
+ - Docker: añadidos `Dockerfile`, `docker-compose.yml` y `nginx.conf` para despliegue contenerizado (configuración básica de nginx como proxy / static server).
 - Añadida la utilidad reutilizable `.icon-btn` en `src/styles.scss` y aplicada a los enlaces rápidos (`src/app/features/home/hero/hero.html`) para animación y cambio de color en hover.
 - Añadidos separadores verticales tipo "pipe" entre elementos de `quick-links` mediante pseudo-elementos CSS (`src/styles.scss`).
 - La flip-card trasera se actualizó para mostrar la imagen de perfil `src/assets/MG/profile_pic.png` y el frente se reestructuró para igualar la jerarquía visual (`src/app/features/home/hero/hero.html`).
@@ -40,7 +47,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `src/app/core/layout/navbar/navbar.ts`: eliminado registro local de iconos (usa registry global).
   - `src/styles.scss`: añadidas utilidades reutilizables de botones (`.btn`, `.btn-primary`, `.btn-secondary`, `.btn-accent`, `.btn-sm`, `.btn-lg`) y reglas de sizing para evitar desbalance visual.
   - `src/app/features/home/hero/hero.html`: CTAs actualizados para usar `btn`/`btn-primary`/`btn-secondary` y tamaños consistentes para mantener equilibrio visual.
-
 - Unificada la estructura frontal y trasera de la flip-card: se introdujo el contenedor `engraved-image` con un wrapper degradado y un contenedor interior `p-2` para mantener tamaños idénticos y evitar saltos durante la rotación (`src/app/features/home/hero/hero.html`).
 - Normalizados los tamaños front/back a `w-80 h-80` (20rem) mediante reglas en `src/app/features/home/hero/hero.scss` para eliminar desalineos visuales.
 - Se cambió `mix-blend-mode` del logo a `normal` y se aplicó `isolation: isolate` al wrapper para evitar que el degradado de fondo sature el logo (`src/app/features/home/hero/hero.scss`).
