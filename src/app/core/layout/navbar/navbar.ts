@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { NgIconComponent } from '@ng-icons/core';
+import { NgOptimizedImage } from "@angular/common";
 
 interface NavItem {
   label: string;
@@ -9,9 +10,9 @@ interface NavItem {
 @Component({
   selector: 'app-navbar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgIconComponent],
+  imports: [NgIconComponent, NgOptimizedImage],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.scss'
+  styleUrls: ['./navbar.scss']
 })
 export class NavbarComponent {
   protected readonly isMenuOpen = signal(false);

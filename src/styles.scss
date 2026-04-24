@@ -109,3 +109,21 @@ h4 {
     transform: translateY(0);
   }
 }
+
+/* Blur-up placeholder for images: used with the `appBlurUp` directive. */
+img.blur-up {
+  display: block;
+  filter: blur(18px) saturate(.95);
+  transform: scale(1.02);
+  transition: filter 420ms ease, transform 420ms ease, opacity 320ms ease;
+  will-change: filter, transform, opacity;
+}
+
+img.blur-up.is-loaded {
+  filter: none;
+  transform: none;
+  opacity: 1;
+}
+
+/* Fallback for icon buttons (SVG) to add consistent sizing/hover */
+.icon-btn { display:inline-block; width:30px; height:30px; vertical-align:middle; }

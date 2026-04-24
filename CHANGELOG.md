@@ -10,9 +10,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Docker: añadidos `Dockerfile`, `docker-compose.yml` y `nginx.conf` para despliegue contenerizado (configuración básica de nginx como proxy / static server).
 
+- Herramienta de optimización de imágenes: Se instaló `sharp` como dependencia de desarrollo.
+
+- Imágenes generadas: `src/assets/MG/generated/profile_pic-160.webp`, `profile_pic-320.webp`, `profile_pic-640.webp`, `profile_pic-1280.webp` y `profile_pic-placeholder.webp` (usadas por la sección `hero` para `srcset` y placeholder).
+
 ### Changed
 - Optimización de imágenes: se convirtieron activos gráficos (PNG/JPG) a WebP en `src/assets/` para reducir peso de las imágenes y mejorar tiempos de carga.
 
+- `hero` y `navbar`: las etiquetas `<img>` ahora incluyen atributos intrínsecos `width`/`height` (evitan CLS) y `hero` usa `ngSrcset`/`srcset` con variantes generadas y `sizes="50vw"` para permitir que `NgOptimizedImage` genere correctamente `srcset`. El contenedor usa el placeholder borroso como background hasta que la imagen carga (`appBlurUp`).
+
+- `src/app/core/layout/navbar/navbar.ts`: corregido `styleUrl` → `styleUrls` (typo) para evitar errores de compilación.
+
+- Paquetes: `sharp` añadido a `devDependencies` y `package-lock.json` actualizado tras la generación de imágenes.
 
 
 ## [1.1.0] - 2026-04-19
