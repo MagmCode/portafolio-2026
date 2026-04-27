@@ -19,8 +19,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `src/app/shared/components/toast/toast.component.ts` (componente standalone para mostrar toasts con animación bottom→top).
   - `AppComponent` ahora registra y renderiza `<app-toast>` para disponibilidad global.
 
+- Projects images: `DataService` actualizado para usar imágenes temporales locales en `src/assets/projects/` en lugar de placeholders externos.
+  - Rutas añadidas en `src/app/core/services/data.service.ts`: `assets/projects/mockup_bank.png`, `assets/projects/mockup_bookapp.png`, `assets/projects/mockup_U.png`.
 ### Changed
 - Optimización de imágenes: se convirtieron activos gráficos (PNG/JPG) a WebP en `src/assets/` para reducir peso de las imágenes y mejorar tiempos de carga.
+
+- Proyectos: actualizados títulos, descripciones y etiquetas (`technologies`) de los items en `DataService` para reflejar proyectos actuales y reales. Ver `src/app/core/services/data.service.ts`.
 
 - `hero` y `navbar`: las etiquetas `<img>` ahora incluyen atributos intrínsecos `width`/`height` (evitan CLS) y `hero` usa `ngSrcset`/`srcset` con variantes generadas y `sizes="50vw"` para permitir que `NgOptimizedImage` genere correctamente `srcset`. El contenedor usa el placeholder borroso como background hasta que la imagen carga (`appBlurUp`).
 

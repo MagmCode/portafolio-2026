@@ -5,32 +5,32 @@ import { ContactInfo, ExperienceItem, ProjectItem, StackGroup } from '../../shar
 export class DataService {
   private readonly projectsState = signal<ProjectItem[]>([
     {
-      title: 'Dashboard Analítico',
+      title: 'Migración de Plataforma Bancaria',
       description:
-        'Aplicación frontend robusta construida con Angular y Tailwind para visualizar métricas en tiempo real, manejando miles de data points optimizados.',
-      technologies: ['Angular', 'Tailwind CSS', 'RxJS', 'Chart.js'],
+        'Refactorización de sistema legado hacia una arquitectura moderna, escalable y segura, optimizando el rendimiento y la mantenibilidad del código.',
+      technologies: ['Angular', 'NobleUI', 'Tailwind CSS'],
       githubUrl: '#',
       demoUrl: '#',
-      imageUrl: 'https://placehold.co/600x400/8B5CF6/FFFFFF?text=Dashboard+Analitico'
+      imageUrl: 'assets/projects/mockup_bank.png'
     },
     {
-      title: 'E-commerce UI Kit',
+      title: 'Bookshelf App',
       description:
-        'Librería y plataforma de comercio electrónico modular con catálogo, filtros avanzados y checkout integrado, mejorando la conversión de usuarios.',
-      technologies: ['Angular Material', 'TypeScript', 'NgRx'],
+        'Aplicación móvil diseñada desde cero para la gestión de bibliotecas personales. Arquitectura enfocada en alto rendimiento y almacenamiento local eficiente.',
+      technologies: ['Flutter', 'Dart', 'Isar DB'],
       githubUrl: '#',
       demoUrl: '#',
-      imageUrl: 'https://placehold.co/600x400/06B6D4/FFFFFF?text=E-commerce+UI'
+      status: 'Fase Beta',
+      imageUrl: 'assets/projects/mockup_bookapp.png'
     },
     {
-      title: 'Mobile Companion Web',
+      title: 'Sistema de consulta de Polizas de Seguro',
       description:
-        'Progressive Web App (PWA) de alto rendimiento centrada en experiencia mobile-first y soporte offline para complementar ecosistemas web.',
-      technologies: ['Angular', 'Service Workers', 'PWA'],
+        'Desarrollo full-stack para proyecto de grado universitario. Integración de una interfaz web dinámica con una API robusta y bases de datos relacionales.',
+      technologies: ['Angular', 'Python', 'Django', 'PostgreSQL'],
       githubUrl: '#',
       demoUrl: '#',
-      status: 'En desarrollo',
-      imageUrl: 'https://placehold.co/600x400/EC4899/FFFFFF?text=Mobile+App'
+      imageUrl: 'assets/projects/mockup_U.png'
     }
   ]);
 
