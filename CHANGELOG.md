@@ -14,6 +14,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Imágenes generadas: `src/assets/MG/generated/profile_pic-160.webp`, `profile_pic-320.webp`, `profile_pic-640.webp`, `profile_pic-1280.webp` y `profile_pic-placeholder.webp` (usadas por la sección `hero` para `srcset` y placeholder).
 
+- Global toast system: añadido `ToastService` y `ToastComponent` para notificaciones reutilizables:
+  - `src/app/shared/services/toast.service.ts` (servicio global basado en Signals).
+  - `src/app/shared/components/toast/toast.component.ts` (componente standalone para mostrar toasts con animación bottom→top).
+  - `AppComponent` ahora registra y renderiza `<app-toast>` para disponibilidad global.
+
 ### Changed
 - Optimización de imágenes: se convirtieron activos gráficos (PNG/JPG) a WebP en `src/assets/` para reducir peso de las imágenes y mejorar tiempos de carga.
 
@@ -22,6 +27,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `src/app/core/layout/navbar/navbar.ts`: corregido `styleUrl` → `styleUrls` (typo) para evitar errores de compilación.
 
 - Paquetes: `sharp` añadido a `devDependencies` y `package-lock.json` actualizado tras la generación de imágenes.
+
+- `src/app/features/home/hero/hero.html` y `hero.ts`: varias mejoras responsivas y de comportamiento:
+  - Reducción de tamaños en móvil (`w-44`/`h-44` → `sm`/`md`) y separación añadida (`mt-12` en mobile) para evitar que la imagen quede pegada a `quick-links`.
+  - La lógica de copia dejó de usar una señal local; `hero.ts` ahora inyecta `ToastService` y llama a `toast.show('¡Copiado!')`.
+  - Eliminada la instancia local del HTML del toast en `hero.html` (ahora centralizado en el root).
+  - La expansión del correo se ha limitado a partir del breakpoint `md` (`md:group-hover` / `md:group-focus`) para evitar overflow horizontal en móviles.
+- `src/app/app.ts` / `src/app/app.html`: registro de `ToastComponent` en `AppComponent` y agregado de `<app-toast>` al template raíz.
+
 
 
 ## [1.1.0] - 2026-04-19

@@ -1,5 +1,5 @@
 <section id="inicio" appScrollAnimate
-  class="relative mx-auto w-full max-w-7xl px-4 pb-40 pt-40 sm:px-6 lg:px-8 grid lg:grid-cols-2 lg:items-center gap-10">
+  class="relative mx-auto w-full max-w-7xl sm:px-6 lg:px-4 lg:py-20 grid md:px-8 py-8 lg:grid-cols-2 lg:items-center gap-10">
   <div class="hero-deep-bg absolute inset-0 -z-10 rounded-[3rem] blur-3xl" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-3xl text-center lg:text-left">
@@ -7,61 +7,57 @@
 
     <h1 class="text-5xl sm:text-6xl font-extrabold text-white leading-tight">Maria Guedez</h1>
 
-    <p class="mt-4 text-xl text-cyan-400">Software Engineer • Web Developer</p>
+    <p class="mt-4 text-lg sm:text-xl text-cyan-400">Software Engineer • Web Developer</p>
 
-    <p class="mt-6 text-neutral-200">Con +{{yearsOfExperience}} años de experiencia, disfruto resolver problemas complejos con la misma lógica y paciencia que requiere armar un cubo de Rubik, hasta que un diseño deja de ser estático y cobra vida en el navegador.</p>
+    <p class="mt-6 text-neutral-200 text-sm sm:text-base">Con +{{yearsOfExperience}} años de experiencia, disfruto resolver problemas complejos con la misma lógica y paciencia que requiere armar un cubo de Rubik, hasta que un diseño deja de ser estático y cobra vida en el navegador.</p>
 
     <div class="mt-8 flex items-center gap-6 justify-center lg:justify-start flex-wrap">
       <div class="flex gap-8">
-        <a href="#proyectos"
-          class="btn btn-primary">Ver proyectos</a>
-
-        <a href="#contacto" 
-          class=" btn btn-secondary">Contacto</a>
+        <a href="#proyectos" class="btn btn-primary h-10 min-w-[8rem] text-sm sm:h-12 sm:min-w-[10rem] sm:text-base">Ver proyectos</a>
+        <a href="#contacto" class="btn btn-secondary h-10 min-w-[8rem] text-sm sm:h-12 sm:min-w-[10rem] sm:text-base">Contacto</a>
       </div>
     </div>
 
-      <div class="quick-links mt-10 pl-3 flex items-center">
+    <div class="quick-links mt-10 pl-3 flex items-center md:flex-row justify-center lg:justify-start">
 
-        <a href="https://github.com/MagmCode"  target="_blank" rel="noopener" aria-label="GitHub">
-          <ng-icon name="octMarkGithub" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
-        </a>
+      <a href="https://github.com/MagmCode" target="_blank" rel="noopener" aria-label="GitHub">
+        <ng-icon name="octMarkGithub" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
+      </a>
 
-        <a href="https://www.linkedin.com/in/maria-guedez-code" target="_blank" rel="noopener" aria-label="LinkedIn">
-          <ng-icon name="ionLogoLinkedin" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
-        </a>
+      <a href="https://www.linkedin.com/in/maria-guedez-code" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <ng-icon name="ionLogoLinkedin" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
+      </a>
 
-        <a href="https://wa.me/+584122887873" target="_blank" rel="noopener" aria-label="WhatsApp">
-          <ng-icon name="ionLogoWhatsapp" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
-        </a>
+      <a href="https://wa.me/+584122887873" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <ng-icon name="ionLogoWhatsapp" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
+      </a>
 
-        <button (click)="copyEmail('mariaaguedez.08@gmail.com')"
-          class="group   items-center" aria-label="Copiar correo">
-          <ng-icon name="octMail" title="Copiar" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
-          <span class="ml-2 overflow-hidden text-shadow-100 max-w-0 transition-all duration-300 ease-in-out group-hover:max-w-[250px] group-focus:max-w-[250px]  whitespace-nowrap">mariaaguedez.08@gmail.com</span>
-        </button>
+      <button (click)="copyEmail('mariaaguedez.08@gmail.com')" class="group items-center" aria-label="Copiar correo">
+        <ng-icon name="octMail" title="Copiar" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
+        <span class="ml-2 overflow-hidden text-shadow-100 max-w-0 inline-block transition-all duration-500 ease-in-out md:group-hover:max-w-[250px] md:group-focus:max-w-[250px] whitespace-nowrap">mariaaguedez.08@gmail.com</span>
+      </button>
 
-      </div>
     </div>
+  </div>
 
-  <div class="relative flex justify-center lg:justify-end">
-    <div class="absolute h-56 w-56 rounded-full "></div>
+  <div class="relative flex justify-center lg:justify-end mt-0 lg:mt-0">
+    <div class="absolute h-44 w-44 sm:h-56 sm:w-56 rounded-full"></div>
 
     <div class="hero-card">
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <div class="engraved-image mx-auto w-80 h-80 relative isolate" aria-hidden="true" role="img" aria-label="Logo">
+            <div class="engraved-image mx-auto w-44 h-44 sm:w-56 sm:h-56 md:w-80 md:h-80 relative isolate" aria-hidden="true" role="img" aria-label="Logo">
               <div class="absolute inset-0 rounded-full bg-gradient-to-r from-accent-secondary to-accent-primary blur-xl opacity-10 z-0" aria-hidden="true"></div>
               <div class="logo-engraved relative rounded-full p-2 bg-transparent z-10" aria-hidden="true">
-                <img ngSrc="assets/MG/Logo_MG.webp" alt="MG logo" width="920" height="1086" 
-                  class=" object-contain w-80 h-80 mx-auto mix-blend-normal" priority />
+                <img ngSrc="assets/MG/Logo_MG.webp" alt="MG logo" width="920" height="1086"
+                  class="object-contain w-44 h-44 sm:w-56 sm:h-56 md:w-80 md:h-80 mx-auto mix-blend-normal" priority />
               </div>
             </div>
           </div>
 
           <div class="flip-card-back">
-           <div class="profile-image mx-auto w-80 h-80 relative" role="img" aria-label="Foto de perfil de Maria Guedez">
+           <div class="profile-image mx-auto w-50 h-50 sm:w-56 sm:h-56 md:w-80 md:h-80 relative" role="img" aria-label="Foto de perfil de Maria Guedez">
             <div class="absolute inset-0 rounded-full bg-gradient-to-r from-accent-secondary to-accent-primary blur-3xl opacity-30"></div>
             <div class="relative rounded-full bg-transparent"
                  style="background-image: url('assets/MG/generated/profile_pic-placeholder.webp'); background-size: cover; background-position: center;">
@@ -70,8 +66,7 @@
                   sizes="50vw"
                   alt="Foto de perfil de Maria Guedez"
                   width="1792" height="1968"
-                  class="border border-accent-primary/50 rounded-full object-cover w-80 h-80 mx-auto"
-                  
+                  class="border border-accent-primary/50 rounded-full object-cover w-50 h-50 sm:w-56 sm:h-56 md:w-80 md:h-80 mx-auto"
                   priority />
             </div>
             </div>
@@ -81,30 +76,3 @@
     </div>
   </div>
 </section>
-
-
-<!-- 
-NOTA: El siguiente bloque de código es para mostrar un toast de "¡Copiado!" cuando el usuario hace clic en el botón de copiar correo. Este código puede ser colocado en un componente global para mejorar el manejo de estados y evitar duplicación en otras partes de la aplicación. Manteniendo un codigo DRY
--->
-
-
-<!-- Toast (copiado) -->
-@if (showToast()) {
-<div class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 animate-in fade-in slide-in-from-bottom-5">
-  <div
-    class="max-w-sm w-full bg-primary-500/20 border border-primary-500/20 backdrop-blur-2xl rounded-xl p-4 shadow-2xl">
-    <div class="flex items-center gap-3">
-      <div class="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-500">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-          class="size-5">
-          <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
-        </svg>
-      </div>
-      <div>
-        <div class="text-white text-sm">¡Copiado!</div>
-        <p class="text-xs text-neutral-200">Correo copiado al portapapeles</p>
-      </div>
-    </div>
-  </div>
-</div>
-}

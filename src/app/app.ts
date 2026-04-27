@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './core/layout/footer/footer';
 import { NavbarComponent } from './core/layout/navbar/navbar';
 import { isPlatformBrowser } from '@angular/common';
+import { ToastComponent } from './shared/components/toast/toast.component';
 
 @Component({
   selector: 'app-root',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterOutlet, NavbarComponent, FooterComponent],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, ToastComponent],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

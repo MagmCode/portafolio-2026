@@ -1,7 +1,9 @@
-import { NgOptimizedImage } from '@angular/common'; // Eliminamos NgIf
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core'; // Usaremos Signals para Angular 21
+import { NgOptimizedImage } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { NgIconComponent } from '@ng-icons/core';
 import { ScrollAnimateDirective } from '../../../shared/directives/scroll-animate.directive';
+import { ToastService } from '../../../shared/services/toast.service';
+import { ToastComponent } from '../../../shared/components/toast/toast.component';
 
 @Component({
   selector: 'app-hero',
@@ -13,15 +15,13 @@ import { ScrollAnimateDirective } from '../../../shared/directives/scroll-animat
 })
 export class HeroComponent {
   yearsOfExperience = new Date().getFullYear() - 2022;
-
-  showToast = signal(false);
+  private toast = inject(ToastService);
 
   copyEmail(email: string) {
     if (!email) return;
 
     navigator.clipboard.writeText(email).then(() => {
-      this.showToast.set(true);
-      setTimeout(() => this.showToast.set(false), 3000);
+      this.toast.show('¡Copiado!');
     }).catch(err => {
       console.error('Error al copiar:', err);
     });
