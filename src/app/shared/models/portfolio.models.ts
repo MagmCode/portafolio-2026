@@ -17,8 +17,11 @@ export interface ProjectItem {
   technologies: string[];
   githubUrl: string;
   demoUrl: string;
+  confidential: boolean;
   status?: string;
   imageUrl?: string;
+  challenges?: string;
+  solutions?: string;
 }
 
 export interface ExperienceItem {

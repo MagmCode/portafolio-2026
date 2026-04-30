@@ -62,6 +62,10 @@ h4 {
     }
   }
 
+  .btn-disabled {
+     @apply  border border-primary-500/60 bg-primary-500/10 cursor-not-allowed text-neutral-400 opacity-50 transition;
+  }
+
   // .btn-accent ng-icon {
   //   @apply transition-transform transform ;
   //   &:hover {

@@ -1,0 +1,36 @@
+@if (project) {
+<div class="fixed inset-0 z-[9999] flex items-center justify-center">
+    <div class="fixed inset-0 bg-black/60" (click)="close()" aria-hidden="true"></div>
+
+    <div #dialog role="dialog" aria-modal="true" aria-labelledby="project-details-title" aria-describedby="project-details-desc"
+        class="relative w-full max-w-3xl mx-4 rounded-xl bg-primary-700/20 backdrop-blur-2xl  p-6 shadow-lg"
+        tabindex="0">
+        <header class="flex items-start justify-between gap-4">
+            <h3 id="project-details-title" class="text-lg font-semibold text-neutral-100" tabindex="-1">
+                {{ project.title }}
+            </h3>
+            <button type="button" class="text-neutral-300 hover:text-white" (click)="close()"
+                aria-label="Cerrar diálogo">✕</button>
+        </header>
+
+        <div id="project-details-desc" class="mt-4 text-neutral-300 space-y-4">
+            <p>{{ project.description }}</p>
+
+            @if (project.challenges) {
+            <section>
+                <h4 class="font-medium text-neutral-100">Retos</h4>
+                <p class="mt-1 text-sm">{{ project.challenges }}</p>
+            </section>
+            }
+
+            @if (project.solutions) {
+            <section>
+                <h4 class="font-medium text-neutral-100">Soluciones</h4>
+                <p class="mt-1 text-sm">{{ project.solutions }}</p>
+            </section>
+            }
+
+        </div>
+    </div>
+</div>
+}

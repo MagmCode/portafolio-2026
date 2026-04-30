@@ -11,6 +11,9 @@ export class DataService {
       technologies: ['Angular', 'NobleUI', 'Tailwind CSS'],
       githubUrl: '#',
       demoUrl: '#',
+      confidential: true,
+      challenges: 'Transformar un sistema crítico legado cuya lógica de presentación estaba fuertemente acoplada al backend (Java 8 / Foundation 2). El objetivo era desacoplar el Frontend para ganar escalabilidad y agilidad en el desarrollo.',
+      solutions: 'Lideré la migración de vistas y flujos complejos hacia Angular 14, implementando una arquitectura basada en componentes reutilizables sobre NobleUI. No fue solo un cambio visual; se rediseñó la experiencia del usuario (UX) para homologar procesos y optimizar los tiempos de operación, manteniendo un look & feel corporativo estrictamente personalizado.',
       imageUrl: 'assets/projects/mockup_bank.png'
     },
     {
@@ -18,18 +21,20 @@ export class DataService {
       description:
         'Aplicación móvil diseñada desde cero para la gestión de bibliotecas personales. Arquitectura enfocada en alto rendimiento y almacenamiento local eficiente.',
       technologies: ['Flutter', 'Dart', 'Isar DB'],
-      githubUrl: '#',
+      githubUrl: 'https://github.com/MagmCode/3Dbook/settings/pages',
       demoUrl: '#',
+      confidential: false,
       status: 'Fase Beta',
       imageUrl: 'assets/projects/mockup_bookapp.png'
     },
     {
       title: 'Sistema de consulta de Polizas de Seguro',
       description:
-        'Desarrollo full-stack para proyecto de grado universitario. Integración de una interfaz web dinámica con una API robusta y bases de datos relacionales.',
-      technologies: ['Angular', 'Python', 'Django', 'PostgreSQL'],
-      githubUrl: '#',
-      demoUrl: '#',
+        'Desarrollo full-stack para proyecto de grado universitario, orientado a un corredor de seguros. Integración de una interfaz web dinámica con una API robusta y bases de datos relacionales.',
+      technologies: ['Angular', 'Django', 'PostgreSQL'],
+      githubUrl: 'https://github.com/MagmCode/3Dbook/settings/pages',
+      demoUrl: '',
+      confidential: false,
       imageUrl: 'assets/projects/mockup_U.png'
     }
   ]);
