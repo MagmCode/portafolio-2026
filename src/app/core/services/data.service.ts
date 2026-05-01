@@ -21,7 +21,7 @@ export class DataService {
       description:
         'Aplicación móvil diseñada desde cero para la gestión de bibliotecas personales. Arquitectura enfocada en alto rendimiento y almacenamiento local eficiente.',
       technologies: ['Flutter', 'Dart', 'Isar DB'],
-      githubUrl: 'https://github.com/MagmCode/3Dbook/settings/pages',
+      githubUrl: 'https://github.com/MagmCode/book_tracker',
       demoUrl: '#',
       confidential: false,
       status: 'Fase Beta',
@@ -32,8 +32,8 @@ export class DataService {
       description:
         'Desarrollo full-stack para proyecto de grado universitario, orientado a un corredor de seguros. Integración de una interfaz web dinámica con una API robusta y bases de datos relacionales.',
       technologies: ['Angular', 'Django', 'PostgreSQL'],
-      githubUrl: 'https://github.com/MagmCode/3Dbook/settings/pages',
-      demoUrl: '',
+      githubUrl: 'https://github.com/MagmCode/seguros-project',
+      demoUrl: 'https://automatizacionpolizas.netlify.app/',
       confidential: false,
       imageUrl: 'assets/projects/mockup_U.png'
     }
