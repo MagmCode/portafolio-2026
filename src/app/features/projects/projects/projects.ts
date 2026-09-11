@@ -1,13 +1,15 @@
 import { ChangeDetectionStrategy, Component, HostListener, inject, signal } from '@angular/core';
 import { DataService } from '../../../core/services/data.service';
 import { ScrollAnimateDirective } from '../../../shared/directives/scroll-animate.directive';
+import { TiltDirective } from '../../../shared/directives/tilt.directive';
+import { CursorGlowDirective } from '../../../shared/directives/cursor-glow.directive';
 import { ProjectItem } from '../../../shared/models/portfolio.models';
 import { Modal } from '../../../shared/components/modal/modal';
 
 @Component({
   selector: 'app-projects',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [ScrollAnimateDirective, Modal],
+  imports: [ScrollAnimateDirective, TiltDirective, CursorGlowDirective, Modal],
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
 })

@@ -1,7 +1,6 @@
 export interface TechItem {
   name: string;
   icon: string;
-  level: string;
 }
 
 export interface StackGroup {
@@ -30,6 +29,16 @@ export interface ExperienceItem {
   organization: string;
   summary: string;
   highlights: string[];
+}
+
+export interface EducationItem {
+  title: string;
+  institution: string;
+  period: string;
+  description: string;
+  kind: 'degree' | 'language';
+  badge?: string;
+  progress?: number;
 }
 
 export interface ContactInfo {

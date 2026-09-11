@@ -1,5 +1,5 @@
 import { heroEnvelope, heroArrowDownTray, heroBars3, heroBars3BottomRight } from '@ng-icons/heroicons/outline';
-import { ionLogoLinkedin, ionLogoWhatsapp } from '@ng-icons/ionicons';
+import { ionLogoLinkedin, ionLogoWhatsapp, ionHeart } from '@ng-icons/ionicons';
 import { octMail, octMarkGithub } from '@ng-icons/octicons';
 
 // Centralizar los iconos usados por la app para registrarlos globalmente.
@@ -14,6 +14,7 @@ export const appIcons = {
 
   ionLogoLinkedin,
   ionLogoWhatsapp,
+  ionHeart,
 
   octMarkGithub,
   octMail,

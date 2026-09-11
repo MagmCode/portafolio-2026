@@ -132,3 +132,122 @@ img.blur-up.is-loaded {
 
 /* Fallback for icon buttons (SVG) to add consistent sizing/hover */
 .icon-btn { display:inline-block; width:30px; height:30px; vertical-align:middle; }
+
+/* ---------- Marquee (infinite, GPU-only, pause on hover) ---------- */
+.marquee-mask {
+  overflow: hidden;
+  user-select: none;
+}
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.logo-item {
+  filter: grayscale(1);
+  transition: filter 0.3s ease;
+}
+.logo-item:hover {
+  filter: grayscale(0);
+}
+.logo-item img,
+.logo-item .logo-fallback {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(0) scale(1);
+}
+.logo-item:hover img,
+.logo-item:hover .logo-fallback {
+  transform: translateY(-4px) scale(1.18);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  animation: marquee-scroll var(--marquee-duration, 36s) linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+.marquee-track > * {
+  display: flex;
+  flex-shrink: 0;
+}
+.marquee-mask + .marquee-mask,
+.marquee-track > .marquee-mask + .marquee-mask {
+  margin-left: 0;
+}
+@keyframes marquee-scroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+
+/* ---------- Cursor glow (glassmorphism spotlight) ---------- */
+.cursor-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 260px;
+  border-radius: 9999px;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  will-change: transform, opacity;
+  background:
+    radial-gradient(closest-side, rgba(37, 99, 207, 0.28), rgba(85, 58, 181, 0.16) 55%, transparent 100%);
+  filter: blur(14px);
+}
+@supports (background: paint(worklet)) {
+  .cursor-glow { filter: none; }
+}
+
+/* ---------- Skills / progress bar (fill-on-scroll, GPU-only) ---------- */
+.skill-bar {
+  transform-origin: left center;
+  transform: scaleX(0);
+  animation: skill-bar-grow 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes skill-bar-grow {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
+/* ---------- Availability dot (status pulse, used in hero/contact/footer) ---------- */
+.availability-dot {
+  display: inline-block;
+  border-radius: 9999px;
+  background-color: rgb(74 222 128);
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.6);
+  animation: availability-dot-pulse 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@keyframes availability-dot-pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 10px rgba(74, 222, 128, 0.6); }
+  50% { opacity: 0.5; box-shadow: 0 0 22px rgba(74, 222, 128, 0.25); }
+}
+
+/* ---------- Reduced motion: disable decorative animation ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .flash-once {
+    animation: none !important;
+  }
+  .skill-bar {
+    transform: scaleX(1);
+    animation: none;
+  }
+  .availability-dot {
+    animation: none;
+    opacity: 1;
+    box-shadow: none;
+  }
+  .logo-item img,
+  .logo-item .logo-fallback {
+    transform: none !important;
+    transition: none !important;
+  }
+  .cursor-glow {
+    display: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

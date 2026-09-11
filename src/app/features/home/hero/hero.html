@@ -3,13 +3,21 @@
   <div class="hero-deep-bg absolute inset-0 -z-10 rounded-[3rem] blur-3xl" aria-hidden="true"></div>
 
   <div class="mx-auto max-w-3xl text-center lg:text-left">
-    <p class="text-md font-bold uppercase tracking-[0.1em] text-shadow-100 mb-4">¡Hola! Yo soy</p>
+    <p class="flex min-h-[1.5rem] items-center text-md font-bold uppercase tracking-[0.1em] text-shadow-100 mb-3" aria-live="polite">
+      <span class="whitespace-pre">{{ kicker() }}</span>
+      @if (kickerCaret()) { <span class="hero-kicker-caret"></span> }
+    </p>
 
-    <h1 class="text-5xl sm:text-6xl font-extrabold text-white leading-tight">Maria Guedez</h1>
+    <h1 class="text-5xl sm:text-6xl font-extrabold text-primary-100 leading-tight [text-wrap:balance]">Maria Guedez</h1>
 
-    <p class="mt-4 text-lg sm:text-xl text-cyan-400">Software Engineer • Web Developer</p>
+    <p class="mt-4 text-lg sm:text-xl text-accent-primary/90 font-medium">Software Engineer • Web Developer</p>
 
     <p class="mt-6 text-neutral-200 text-sm sm:text-base">Con +{{yearsOfExperience}} años de experiencia, disfruto resolver problemas complejos con la misma lógica y paciencia que requiere armar un cubo de Rubik, hasta que un diseño deja de ser estático y cobra vida en el navegador.</p>
+
+    <div class="mt-5 flex items-center gap-2.5 justify-center lg:justify-start">
+      <span class="availability-dot h-2 w-2"></span>
+      <span class="text-xs font-medium tracking-[0.14em] text-neutral-300 uppercase">Disponible para proyectos</span>
+    </div>
 
     <div class="mt-8 flex items-center gap-6 justify-center lg:justify-start flex-wrap">
       <div class="flex gap-8">
@@ -18,7 +26,7 @@
       </div>
     </div>
 
-    <div class="quick-links mt-10 pl-3 flex items-center md:flex-row justify-center lg:justify-start">
+    <div class="quick-links mt-6 pl-3 flex items-center md:flex-row justify-center lg:justify-start">
 
       <a href="https://github.com/MagmCode" target="_blank" rel="noopener" aria-label="GitHub">
         <ng-icon name="octMarkGithub" class="icon-btn" aria-hidden="true" size="30"></ng-icon>
@@ -40,10 +48,10 @@
     </div>
   </div>
 
-  <div class="relative flex justify-center lg:justify-end mt-0 lg:mt-0">
+  <div appScrollAnimate fade="right" [delay]="120" class="relative flex justify-center lg:justify-end mt-0 lg:mt-0">
     <div class="absolute h-44 w-44 sm:h-56 sm:w-56 rounded-full"></div>
 
-    <div class="hero-card">
+    <div class="hero-card relative" appTilt [tiltMax]="4" [tiltScale]="0.97">
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">

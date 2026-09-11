@@ -1,0 +1,54 @@
+:host {
+  display: block;
+}
+
+/* Blinking terminal caret — GPU-friendly (opacity only) */
+.typewriter-caret {
+  display: inline-block;
+  width: 0.55em;
+  margin-left: 0.15rem;
+  flex-shrink: 0;
+  border-bottom: 2px solid var(--tw-caret, hsl(185 100% 60%));
+  animation: tw-caret-blink 1.05s steps(2, start) infinite;
+}
+
+/* Small blinking loading bar in the header */
+.typewriter-loading-bar {
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: hsl(185 100% 60%);
+  box-shadow: 0 0 10px hsl(185 100% 60% / 0.6);
+  animation: tw-caret-blink 1.05s steps(2, start) infinite;
+}
+
+@keyframes tw-caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.tw-typeout {
+  min-height: 1.5rem;
+  opacity: 0;
+  animation: tw-typeout-in 300ms ease-out forwards;
+}
+
+@keyframes tw-typeout-in {
+  to { opacity: 1; }
+}
+
+:host-context(html) .typewriter-shell {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter-caret {
+    animation: none;
+    opacity: 0.9;
+  }
+  .tw-typeout {
+    animation: none;
+    opacity: 1;
+  }
+}

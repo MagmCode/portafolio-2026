@@ -1,10 +1,89 @@
 <footer class="border-t border-white/10 bg-neutral-800/40 backdrop-blur-xl">
-	<div class="mx-auto flex w-full max-w-7xl flex-col gap-4 px-4 py-8 text-sm sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-		<p class="text-neutral-400">Copyright © {{year}} Maria Guedez</p>
-		<div class="flex items-center gap-4 text-neutral-400">
-			<a href="#inicio" class="transition hover:text-secondary-500">Inicio</a>
-			<a href="#contacto" class="transition hover:text-secondary-500">Contacto</a>
-			<span class="text-neutral-100">Frontend con futuro</span>
+	<div class="mx-auto grid w-full max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-4 lg:px-8">
+
+		<div>
+			<p class="text-lg font-semibold text-neutral-100">Maria Guedez</p>
+			<p class="mt-1 text-xs uppercase tracking-[0.2em] text-accent-primary/80">Frontend con futuro</p>
+			<p class="mt-4 max-w-xs text-sm leading-6 text-neutral-400">
+				Especialista frontend en Angular. Convierto ideas en interfaces rápidas, accesibles y con detalle de producto.
+			</p>
+			<div class="mt-5 flex items-center gap-2.5">
+				<span class="availability-dot h-2 w-2"></span>
+				<span class="text-xs font-medium uppercase tracking-[0.14em] text-neutral-300">Disponible para proyectos</span>
+			</div>
+		</div>
+
+		<nav aria-label="Navegación del pie">
+			<p class="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-100">Navegación</p>
+			<ul class="mt-4 space-y-2.5 text-sm">
+				@for (link of navLinks; track link.href) {
+				<li>
+					<a [href]="link.href"
+						class="inline-block text-neutral-400 transition duration-200 hover:translate-x-1 hover:text-accent-secondary">
+						{{ link.label }}
+					</a>
+				</li>
+				}
+			</ul>
+		</nav>
+
+		<div>
+			<p class="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-100">Contacto</p>
+			<ul class="mt-4 space-y-3 text-sm text-neutral-400">
+				<li>
+					<a class="transition hover:text-accent-primary" [href]="'mailto:' + contact().email">{{ contact().email }}</a>
+				</li>
+				<li>
+					<a class="transition hover:text-accent-primary" [href]="'tel:' + contact().phone">{{ contact().phone }}</a>
+				</li>
+				<li>
+					<a class="transition hover:text-accent-primary" [href]="contact().whatsapp" target="_blank"
+						rel="noreferrer">WhatsApp</a>
+				</li>
+			</ul>
+			<div class="mt-5 flex gap-3">
+				<a [href]="contact().linkedin" target="_blank" rel="noreferrer" aria-label="LinkedIn"
+					class="icon-btn rounded-full border border-white/15 p-2.5 transition hover:border-accent-secondary hover:text-accent-secondary">
+					<ng-icon name="ionLogoLinkedin" size="16" aria-hidden="true"></ng-icon>
+				</a>
+				<a [href]="contact().github" target="_blank" rel="noreferrer" aria-label="GitHub"
+					class="icon-btn rounded-full border border-white/15 p-2.5 transition hover:border-accent-secondary hover:text-accent-secondary">
+					<ng-icon name="octMarkGithub" size="16" aria-hidden="true"></ng-icon>
+				</a>
+			</div>
+		</div>
+
+		<div>
+			<p class="text-sm font-semibold uppercase tracking-[0.18em] text-neutral-100">Especialidad</p>
+			<ul class="mt-4 space-y-2.5 text-sm text-neutral-400">
+				<li class="flex items-center gap-2">
+					<span class="h-1 w-1 rounded-full bg-accent-primary"></span>
+					Angular · TypeScript
+				</li>
+				<li class="flex items-center gap-2">
+					<span class="h-1 w-1 rounded-full bg-accent-secondary"></span>
+					Tailwind CSS · HTML · CSS
+				</li>
+				<li class="flex items-center gap-2">
+					<span class="h-1 w-1 rounded-full bg-warn-500"></span>
+					Spring Boot · Django · REST
+				</li>
+				<li class="flex items-center gap-2">
+					<span class="h-1 w-1 rounded-full bg-green-400"></span>
+					Git · Docker · Jira
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="border-t border-white/5">
+		<div class="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-2 px-4 py-5 text-xs text-neutral-500 sm:flex-row sm:px-6 lg:px-8">
+			<p>Copyright © {{ year }} Maria Guedez</p>
+			<p class="flex items-center gap-1.5">
+				Crafted with
+				<ng-icon name="ionHeart" size="12" class="text-danger-500" aria-hidden="true"></ng-icon>
+				Angular &amp; Tailwind CSS
+			</p>
 		</div>
 	</div>
 </footer>

@@ -1,5 +1,5 @@
 import { Injectable, signal } from '@angular/core';
-import { ContactInfo, ExperienceItem, ProjectItem, StackGroup } from '../../shared/models/portfolio.models';
+import { ContactInfo, EducationItem, ExperienceItem, ProjectItem, StackGroup } from '../../shared/models/portfolio.models';
 
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -41,74 +41,111 @@ export class DataService {
 
   private readonly experienceState = signal<ExperienceItem[]>([
     {
-      role: 'Frontend Developer Senior',
-      period: '2023 - Actualidad',
-      organization: 'Clientes Internacionales (Freelance)',
-      summary: 'Liderazgo en el desarrollo de arquitecturas modernas y escalables con un enfoque integral en performance.',
-      highlights: ['Lideré la migración de un sistema legado a Angular Standalone, reduciendo el bundle inicial en un 45%', 'Diseñé y desarrollé un Design System interno que aceleró el desarrollo de nuevas features en un 30%', 'Implementé estrategias avanzadas de caché y SSR, reduciendo el LCP a menos de 1.2s']
+      role: 'Especialista Tecnológico',
+      period: 'Ene 2026 - Presente',
+      organization: 'Emac Tech Solutions',
+      summary: 'Liderazgo en el desarrollo y la arquitectura frontend del ecosistema Angular para módulos financieros y de tesorería.',
+      highlights: [
+        'Diseño y desarrollo de flujos de transacciones corporativas y gestión de divisas de alta criticidad.',
+        'Integración estrecha con el equipo backend para el consumo y pruebas de APIs REST.',
+        'Arquitectura de componentes reutilizables y estándares de rendimiento sobre Angular.'
+      ]
     },
     {
-      role: 'Frontend Developer Mid',
-      period: '2022 - 2023',
-      organization: 'Estudio de Producto Digital',
-      summary: 'Desarrollo de interfaces críticas y optimización del flujo de usuarios en plataformas SaaS.',
-      highlights: ['Aumenté la tasa de retención un 15% mediante una profunda mejora en la usabilidad y navegación', 'Implementé testing automatizado logrando un 80% de cobertura en flujos de pago', 'Fui mentor de 2 desarrolladores junior y lideré sesiones de code review']
+      role: 'Especialista Tecnológico',
+      period: 'Ago 2024 - Nov 2025',
+      organization: 'H-Tec Consulting | Banco de Venezuela',
+      summary: 'Desarrollo y mantenimiento de componentes frontend para la plataforma bancaria, con foco en operaciones cambiarias y tesorería.',
+      highlights: [
+        'Implementación de flujos bajo estrictos estándares de seguridad y accesibilidad.',
+        'Depuración de flujos y diagnósticos en bases de datos relacionales para validar consistencia transaccional.',
+        'Optimización de procesos de cambio y tesorería en la banca en línea.'
+      ]
     },
     {
-      role: 'Desarrollador Web Junior',
-      period: '2020 - 2022',
-      organization: 'Consultora de Software',
-      summary: 'Participación en células ágiles entregando soluciones MVP para startups locales.',
-      highlights: ['Participé en el desarrollo end-to-end de 4 productos web con Angular', 'Centralicé la documentación técnica del equipo mejorando el onboarding de nuevos miembros', 'Integré de paneles analíticos conectando APIs complejas']
+      role: 'Analista de Sistemas',
+      period: 'Mar 2023 - Ago 2024',
+      organization: 'IPSFANB',
+      summary: 'Levantamiento de requerimientos técnicos, soporte a sistemas institucionales y desarrollo de interfaces de usuario.',
+      highlights: [
+        'Elaboración de requerimientos funcionales y técnicos junto a usuarios internos.',
+        'Soporte y mantenimiento de módulos web institucionales.',
+        'Desarrollo de interfaces para el mantenimiento continuo de los sistemas.'
+      ]
     }
   ]);
 
   private readonly stackState = signal<StackGroup[]>([
     {
-      title: 'Frontend Arquitecture',
-      subtitle: 'Stack principal con dominio profundo',
+      title: 'Frontend',
+      subtitle: 'Desarrollo de interfaces modernas y accesibles',
       accent: 'primary',
       items: [
-        { name: 'Angular 17+', icon: 'A', level: 'Avanzado' },
-        { name: 'Tailwind CSS', icon: 'T', level: 'Avanzado' },
-        { name: 'TypeScript', icon: 'TS', level: 'Avanzado' },
-        { name: 'RxJS / NgRx', icon: 'R', level: 'Avanzado' },
-        { name: 'Sass / SCSS', icon: 'S', level: 'Avanzado' }
+        { name: 'Angular (v12 - v22)', icon: 'A' },
+        { name: 'TypeScript', icon: 'TS' },
+        { name: 'JavaScript', icon: 'JS' },
+        { name: 'HTML5', icon: 'H' },
+        { name: 'CSS3', icon: 'C' },
+        { name: 'Tailwind CSS', icon: 'T' }
       ]
     },
     {
-      title: 'Despliegues y Backend',
-      subtitle: 'Visión completa del ciclo de vida',
+      title: 'Backend y Bases de Datos',
+      subtitle: 'Integración con servicios y sistemas relacionales',
       accent: 'secondary',
       items: [
-        { name: 'Node.js', icon: 'N', level: 'Intermedio' },
-        { name: 'SQL / NoSQL', icon: 'DB', level: 'Intermedio' },
-        { name: 'Git / GitHub Act.', icon: 'G', level: 'Avanzado' },
-        { name: 'Docker', icon: 'DK', level: 'Intermedio' }
+        { name: 'Spring Boot', icon: 'SB' },
+        { name: 'Django', icon: 'DJ' },
+        { name: 'PostgreSQL', icon: 'PG' },
+        { name: 'MySQL', icon: 'MY' },
+        { name: 'Oracle', icon: 'OR' },
+        { name: 'APIs REST', icon: 'API' }
       ]
     },
     {
-      title: 'UX / Herramientas',
-      subtitle: 'Alineación con el diseño y producto',
+      title: 'Herramientas y Metodologías',
+      subtitle: 'Flujo de trabajo profesional y ágil',
       accent: 'tertiary',
       items: [
-        { name: 'Figma', icon: 'F', level: 'Avanzado' },
-        { name: 'Lighthouse', icon: 'L', level: 'Avanzado' },
-        { name: 'Jest / Jasmine', icon: 'J', level: 'Intermedio' }
+        { name: 'Git / GitHub / GitLab', icon: 'G' },
+        { name: 'Docker', icon: 'DK' },
+        { name: 'Jira · Scrum / Kanban', icon: 'J' },
+        { name: 'Pruebas de endpoints', icon: 'E' }
       ]
     }
   ]);
 
+  private readonly educationState = signal<EducationItem[]>([
+    {
+      kind: 'degree',
+      title: 'Ingeniería en Informática',
+      institution: 'Universidad Experimental de la Gran Caracas (UNEXCA)',
+      period: '2021 - 2026',
+      description: 'Formación universitaria en ingeniería enfocada en desarrollo de software, bases de datos e infraestructura tecnológica.',
+      badge: 'Grado universitario'
+    },
+    {
+      kind: 'language',
+      title: 'Inglés Avanzado — Nivel C1',
+      institution: 'Centro Venezolano Americano (CVA)',
+      period: '120 horas acreditadas',
+      description: 'Programa de inglés bilingüe con dominio profesional del idioma para entornos técnicos y corporativos.',
+      badge: 'Bilingüe',
+      progress: 85
+    }
+  ]);
+
   private readonly contactState = signal<ContactInfo>({
-    email: 'maria.guedez@example.com',
-    phone: '+58 412 1234567',
-    whatsapp: 'https://wa.me/584121234567',
-    linkedin: 'https://linkedin.com/in/mariaguedez',
-    github: 'https://github.com/mariaguedez'
+    email: 'mariaaguedez.08@gmail.com',
+    phone: '+58 412 2887873',
+    whatsapp: 'https://wa.me/584122887873',
+    linkedin: 'https://www.linkedin.com/in/maria-guedez-code',
+    github: 'https://github.com/MagmCode'
   });
 
   readonly projects = this.projectsState.asReadonly();
   readonly experience = this.experienceState.asReadonly();
   readonly stack = this.stackState.asReadonly();
+  readonly education = this.educationState.asReadonly();
   readonly contact = this.contactState.asReadonly();
 }

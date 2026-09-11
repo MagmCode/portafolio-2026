@@ -1,34 +1,57 @@
-<section id="stack" appScrollAnimate class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-  <div class="mb-8">
+<section id="stack" appScrollAnimate class="py-16 lg:py-24">
+  <div class="mx-auto mb-10 max-w-6xl px-4 sm:px-6 lg:px-8">
     <p class="text-sm font-semibold uppercase tracking-[0.2em] text-secondary-500">Mi stack</p>
     <h2 class="mt-3 text-2xl font-semibold text-neutral-100 sm:text-3xl">Tecnologías que uso para construir productos
     </h2>
   </div>
 
-  <div class="grid gap-6 lg:grid-cols-3">
-    @for (group of stackGroups(); track group.title) {
-    <article class="rounded-3xl border bg-neutral-800/70 p-6 shadow-soft backdrop-blur-xl"
-      [class.border-primary-500]="group.accent === 'primary'" [class.border-secondary-500]="group.accent === 'secondary'"
-      [class.border-warn-500]="group.accent === 'tertiary'">
-      <h3 class="text-xl font-semibold text-neutral-100">{{ group.title }}</h3>
-      <p class="mt-2 text-sm text-neutral-400">{{ group.subtitle }}</p>
+  <div class="marquee-mask marquee-fade border-y border-white/5 bg-neutral-900/40 py-5 backdrop-blur-sm"
+    aria-label="Tecnologías e integraciones">
+    <div class="marquee-track" style="--marquee-duration: 28s">
+      @for (copy of [0, 1]; track copy) {
+        <ul class="flex shrink-0 items-center"
+          [attr.aria-hidden]="copy === 1 ? 'true' : null">
+          @for (item of marqueeItems; track item.name) {
+            <li class="logo-item group mx-6 flex shrink-0 flex-col items-center gap-1.5">
+              <img [src]="item.logoUrl" [alt]="item.name" width="28" height="28"
+                loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                class="h-7 w-7 object-contain"
+                (error)="onLogoError($event, item)">
+              <span
+                class="whitespace-nowrap text-[11px] text-neutral-500 transition duration-300 group-hover:text-neutral-200">{{ item.name }}</span>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </div>
 
-      <ul class="mt-5 space-y-3">
-        @for (item of group.items; track item.name) {
-        <li
-          class="group/item flex items-center justify-between rounded-xl border border-white/10 bg-neutral-900/60 px-3 py-2 transition duration-300 hover:-translate-y-0.5 hover:border-secondary-500/60">
-          <div class="flex items-center gap-3">
-            <span
-              class="inline-flex h-8 min-w-8 items-center justify-center rounded-lg bg-white/10 px-1 text-xs font-semibold text-neutral-100">
-              {{ item.icon }}
-            </span>
-            <span class="text-sm text-neutral-100">{{ item.name }}</span>
-          </div>
-          <span class="text-xs text-neutral-400">{{ item.level }}</span>
-        </li>
-        }
-      </ul>
-    </article>
-    }
+  <div class="mx-auto max-w-6xl px-4 pt-12 sm:px-6 lg:px-8">
+    <div class="grid gap-6 lg:grid-cols-3">
+      @for (group of stackGroups(); track group.title; let index = $index) {
+      <article appScrollAnimate fade="none" [delay]="index * 100" appCursorGlow
+        class="relative overflow-hidden rounded-3xl border bg-neutral-800/70 p-6 shadow-soft backdrop-blur-xl transition-transform duration-300 hover:-translate-y-1"
+        [class.border-primary-500]="group.accent === 'primary'" [class.border-secondary-500]="group.accent === 'secondary'"
+        [class.border-warn-500]="group.accent === 'tertiary'">
+        <h3 class="text-xl font-semibold text-neutral-100">{{ group.title }}</h3>
+        <p class="mt-2 text-sm text-neutral-400">{{ group.subtitle }}</p>
+
+        <ul class="mt-5 space-y-3">
+          @for (item of group.items; track item.name) {
+          <li
+            class="group/item relative flex items-center justify-between rounded-xl border border-white/10 bg-neutral-900/60 px-3 py-2 transition-all duration-300 hover:-translate-y-0.5 hover:border-secondary-500/60">
+            <div class="flex items-center gap-3">
+              <span
+                class="inline-flex h-8 min-w-8 items-center justify-center rounded-lg bg-white/10 px-1 text-xs font-semibold text-neutral-100">
+                {{ item.icon }}
+              </span>
+              <span class="text-sm text-neutral-100">{{ item.name }}</span>
+            </div>
+          </li>
+          }
+        </ul>
+      </article>
+      }
+    </div>
   </div>
 </section>

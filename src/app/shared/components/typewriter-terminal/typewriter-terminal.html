@@ -1,0 +1,26 @@
+<div aria-hidden="true"
+  class="typewriter-shell relative w-full max-w-md overflow-hidden rounded-2xl border border-accent-primary/25 bg-neutral-900/85 shadow-[0_24px_70px_-30px_rgba(6,182,212,0.35)] backdrop-blur-xl">
+  <div class="flex items-center gap-2 border-b border-white/5 bg-white/[0.03] px-4 py-2.5">
+    <span class="size-2.5 rounded-full bg-danger-500/80"></span>
+    <span class="size-2.5 rounded-full bg-warn-500/80"></span>
+    <span class="size-2.5 rounded-full bg-accent-primary/80"></span>
+    <span class="ml-2 font-mono text-[10px] tracking-[0.2em] text-neutral-400">ZSH — PORTFOLIO</span>
+    <span class="ml-auto flex items-center gap-1.5 font-mono text-[10px] tracking-[0.2em] text-neutral-500">
+      <span class="typewriter-loading-bar"></span>
+      {{ commandIndex() + 1 }}/{{ commands.length }}
+    </span>
+  </div>
+
+  <div class="flex min-h-[4.5rem] flex-col justify-center gap-2 px-4 py-4 font-mono text-[13px] leading-6">
+    <div class="flex items-center gap-2">
+      <span class="shrink-0 text-accent-secondary">❯</span>
+      <span class="whitespace-pre text-neutral-100">{{ typedLine() }}</span>
+      @if (typing()) { <span class="typewriter-caret"></span> }
+    </div>
+
+    <div class="flex items-center gap-2">
+      <span class="shrink-0 text-transparent">⇢</span>
+      <span class="tw-typeout whitespace-pre text-[11px] text-accent-primary/90">{{ output() }}</span>
+    </div>
+  </div>
+</div>
