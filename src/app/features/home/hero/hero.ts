@@ -18,7 +18,7 @@ export class HeroComponent implements OnDestroy {
   yearsOfExperience = new Date().getFullYear() - 2023;
   private toast = inject(ToastService);
 
-  protected readonly kickerWords = ['¡Hola! Yo soy', 'Bienvenido, yo soy'];
+  protected readonly kickerWords = ['¡Hola! Yo soy', '¡Bienvenido!, yo soy'];
   protected readonly kicker = signal('');
   protected readonly kickerCaret = signal(false);
 

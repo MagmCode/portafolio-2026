@@ -180,10 +180,11 @@
 /* Kicker caret — inline, no layout shift */
 .hero-kicker-caret {
 	display: inline-block;
-	width: 0.55em;
+	width: 2px;
+	height: 1.1em;
 	margin-left: 0.15rem;
 	align-self: center;
-	border-bottom: 2px solid hsl(185 100% 60%);
+	background: hsl(185 100% 60%);
 	animation: tw-caret-blink 1.05s steps(2, start) infinite;
 }
 
